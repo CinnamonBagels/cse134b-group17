@@ -1,35 +1,100 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <title>Lord and Savior Gaben Team Page</title>
+    <style>
+      ul {list-style-type:none;
+                     margin:0;
+                     padding:0;
+                     overflow:hidden;} 
+      #top-left li {height:15px; color:#FFFF66;
+                    width:60px;}
+      #top-left {float:left; width:30%;margin-left:2%;}
+      #top-right li {float:left;}
+      #top-right a {text-decoration:none;
+                    text-align:center;
+                    color:#FFFFFF;
+                    width:150px; 
+                    height:60px; 
+                    display:block;
+                    line-height:60px;
+                    font-size:14px;}
+      #top-right a:hover {display:block;
+                         line-height:60px;
+                         color: #CCFFFF;}
+      #middle {width:100%;height:450px;margin-top:40px;margin-left:5%;}
+      #middle-left {width:80%;
+                    height:100%;
+                    display:block;
+                    float:left;
+                    margin-right:0;}
+      #middle-right {float:left;
+                     width:19%;
+                     heith:100%;}
+      #middle-right li {width:100%;
+                  height:70px;
+                  display:block;
+                  line-height:70px;
+                  border-left-style:dashed;
+                  border-left:#
+                  }
+      #footer {clear:both;
+               text-align:center;
+               color:#72A1B8;}
+    </style>
 </head>
-<body>
-    <div id="derek">
-      <p>
-
-      </p>
+<body bgcolor="#5C8A8A">
+    <div>
+      <div id="top-left">
+        <ul>
+          <li>O<small>ur</small></li>
+          <li>L<small>ord&</small></li>
+          <li>S<small>avior</small></li>
+          <li>G<small>aben</small></li>
+        </ul>
+      </div>
+      <div id="top-right">
+        <ul>
+          <li><a href="team-page.html">TEAM </a></li>
+          <li><a href="index.html">PROJECTs </a></li>
+          <li><a href="photos.html">PHOTOs </a></li>
+        </ul>
+      </div>
     </div>
-    <div id="Jin">
-       <p>
-
-       </p>
+    <div id="middle">
+      <script type="text/javascript"><!-- 
+        function showPic(whichpic) {
+          var source = whichpic.getAttribute("href");
+          var placeholder = document.getElementById("placeholder");
+          placeholder.setAttribute("src",source);
+        }
+      //--> </script>
+      <div id="middle-left">
+      <img id="placeholder" src="" height=60%>
+      We are team from CSE 134B!
+      </div>
+      <div id="middle-right">
+        <ul>
+          <li><a href="1.jpg"
+               title="Derek" onclick="showPic(this); return false;">
+               Derek</a></li>
+          <li><a href="2.jpg"
+               title="Jin" onclick="showPic(this); return false;">
+               Jin</a></li>
+          <li><a href="3.jpg"
+               title="Oscar" onclick="showPic(this); return false;">
+               Oscar</a></li>
+          <li><a href="4.jpg"
+               title="Matthew" onclick="showPic(this); return false;">
+               Matthew</a></li>
+          <li><a href="5.jpg"
+               title="Sam" onclick="showPic(this); return false;">
+               Sam</a></li>
+        </ul>
+      </div>
     </div>
-    <div id="oscar">
-       <p>
-
-       </p>
-    </div>
-    <div id="matt">
-       <p>
-
-       </p>
-    </div>
-    <div id="sam">
-       <p>
-
-       </p>
-    </div>
+    <div id="footer">Copyright &copy; Our Lord and Savior Gaben</div>
 </body>
 </html>
