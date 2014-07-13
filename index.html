@@ -2,20 +2,47 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Our Lord and Savior Gaben</title>
 </head>
 <body>
+    <!-- THIS IS THE NAV BAR DIV -->
+    <nav>
+        <form action="index.html" method="post">
+            <input type="submit" value="homepage" />
+        </form>
+        <form action="index.html" method="get">
+            <input type="text" name="searchQuery" />
+            <input type="submit" name="Search" />
+        </form>
+    </nav>
+
+    <!-- This is going to be the side nav bar which is going to be
+        a list of most categories available, sorted by the most
+        popular to the least popular.
+        -->
     <div>
-       <form action="team-page.html" method="post">
-            <input type="submit" value="team page" />
-       </form>
-       <form action="index.html" method="post">
-            <input type="submit" value="Home page" />
-       </form>
+        <ul>
+            <li><a href="">Cats</a></li>
+            <li><a href="">Gaben</a></li>
+            <li><a href="">Half-life Episode 3 Reveal</a></li>
+            <li><a href="">Steam Summer Sale</a></li>
+            <li><a href="">Well!!</a></li>
+            <li><a href="">HUEHUEHUEHEUHEUHEUHEUHE</a></li>
+        </ul>
     </div>
+
+    <!-- All meme pictures from search go here.-->
     <div>
-        <img border="0" src="./web_diagram.png" width="100%"/>
+        <img src="./img/gaben1.jpg" alt="I" height="300" width="300"/>
+        <img src="./img/gaben2.png" alt="Love" height="300" width="300" />
+        <img src="./img/gaben3.jpg" alt="Gabe" height="300" width="300" />
+        <img src="./img/gaben4.jpg" alt="Newell" height="300" width="300" />
+        <img src="./img/gaben5.jpg" alt="Pls release halflife3" height="300" width="300" />
     </div>
+
+    <footer>
+        &#169; <a href="team-page.html">CSE134B Team 17</a>
+    </footer>
 </body>
 </html>
