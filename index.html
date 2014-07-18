@@ -6,16 +6,19 @@
     <title>Our Lord and Savior Gaben</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./gabenfavicon.ico">
+    <link rel="shortcut icon" href="./gabenfavicon.ico" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+
 </head>
 <body>
     <!-- THIS IS THE NAV BAR DIV -->
-    <nav>
-        <form action="index.html" method="post">
-            <input type="submit" value="homepage" />
-        </form>
-        <form action="index.html" method="get">
-            <input type="text" name="searchQuery" />
+    <nav id="nav-bar">
+        <a href="index.html">Home Page</a>
+        <a href="team-page.html">CSE134B Team 17</a>
+        <form id="search-bar" action="index.html" method="get">
+            <input type="text" name="searchQuery" placeholder="Make me laugh!" size="50"/>
             <input type="submit" name="Search" />
         </form>
     </nav>
@@ -24,32 +27,46 @@
         a list of most categories available, sorted by the most
         popular to the least popular.
         -->
-    <div>
+    <div id="side-nav">
         <ul>
-            <li><a href="">Cats</a></li>
-            <li><a href="">Gaben</a></li>
-            <li><a href="">Half-life Episode 3 Reveal</a></li>
-            <li><a href="">Steam Summer Sale</a></li>
-            <li><a href="">Well!!</a></li>
-            <li><a href="">HUEHUEHUEHEUHEUHEUHEUHE</a></li>
+            <li><a href="index.html"><span class="category">Cats</span></a></li>
+            <li><a href="index.html"><span class="category">Dogs</span></a></li>
+            <li><a href="index.html"><span class="category">Of Mice and Men</span></a></li>
+            <li><a href="index.html"><span class="category">Steam Summer Sale</span></a></li>
+            <li><a href="index.html"><span class="category">Well!!</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
+            <li><a href="index.html"><span class="category">HUEHUEHUEHEUHEUHEUHEUHE</span></a></li>
         </ul>
     </div>
 
     <!-- All meme pictures from search go here.-->
-    <div>
-        <img src="./img/gaben1.jpg" alt="I" height="300" width="300"/>
-        <img src="./img/gaben2.png" alt="Love" height="300" width="300" />
-        <img src="./img/gaben3.jpg" alt="Gabe" height="300" width="300" />
-        <img src="./img/gaben4.jpg" alt="Newell" height="300" width="300" />
-        <img src="./img/1.jpg" alt="whuehue" height="300" width="300" />
-        <img src="./img/2.jpg" alt="aehuehuaheu" height="300" width="300" />
-        <img src="./img/3.jpg" alt="Brazil is #1" height="300" width="300" />
-        <img src="./img/4.jpg" alt="Mordekaiser es #1" height="300" width="300" />
-        <img src="./img/5.jpg" alt="cop" height="300" width="300" />
+    <div id="meme-base">
+        <img class="meme" src="./img/gaben1.jpg" alt="I" />
+        <img class="meme" src="./img/gaben2.png" alt="Love"  />
+        <img class="meme" src="./img/gaben3.jpg" alt="Gabe"  />
+        <img class="meme" src="./img/gaben4.jpg" alt="Newell"  />
+        <img class="meme" src="./img/1.jpg" alt="whuehue"  />
+        <img class="meme" src="./img/2.jpg" alt="aehuehuaheu"  />
+        <img class="meme" src="./img/3.jpg" alt="Brazil is #1"  />
+        <img class="meme" src="./img/4.jpg" alt="Mordekaiser es #1"  />
+        <img class="meme" src="./img/5.jpg" alt="cop"  />
     </div>
 
-    <footer>
-        &#169; <a href="team-page.html">CSE134B Team 17</a>
+    <footer id="footer">
     </footer>
 </body>
 </html>
