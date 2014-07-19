@@ -11,6 +11,12 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 
+	<script type="text/javascript">
+		function save() {
+			alert('Successfully saved into the Chrome Extension!');
+		}
+	</script>
+
 </head>
 <body>
     <!-- THIS IS THE NAV BAR DIV -->
@@ -55,7 +61,7 @@
 
     <!-- All meme pictures from search go here.-->
     <div id="meme-base">
-        <img class="meme" src="./img/gaben1.jpg" alt="I" />
+        <img class="meme" onclick="save()" src="./img/gaben1.jpg" alt="I" />
         <img class="meme" src="./img/gaben2.png" alt="Love"  />
         <img class="meme" src="./img/gaben3.jpg" alt="Gabe"  />
         <img class="meme" src="./img/gaben4.jpg" alt="Newell"  />
