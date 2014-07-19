@@ -6,6 +6,24 @@
 	<title>Save Pictures to your Drop-box</title>
 
 	<link rel="stylesheet" type="text/css" href="./css/stylesheet.css" />
+
+	<script type="text/javascript">
+		//whoops dont need this attempt failed.
+		/*(document.getElementById('save').addEventListener('click', save, false);
+
+		function save() {
+			$('#save').on('click', function (e) {
+				e.originalEvent.stopPropagation();
+				e.originalEvent.preventDefault();
+				document.write('huehue');
+			});
+		})();
+		function save() {
+			alert('huehue');
+			return false;
+		}*/
+	</script>
+
 </head>
 <body>
 	<div id="message">
@@ -20,8 +38,10 @@
 		<img src="img/gaben3.jpg" alt="woof"/>
 	</div>
 	<div id="actions">
-		<a id="save" href="popup.html">Send these memes to my Dropbox!</a>
+		<a id="save" href="#">Send these memes to my Dropbox!</a>
 		<a id="clear" href="popup.html">Clear my meme list</a>
 	</div>
+
+	<script src="./js/jquery-1.10.2.js"></script>
 </body>
 </html>
