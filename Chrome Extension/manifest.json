@@ -1,0 +1,11 @@
+{
+  "name": "CSE134B Chrome Extension",
+  "manifest_version": 2,
+  "version": "1.0",
+  "description": "My first Chrome extension.",
+  "browser_action": {
+  	"default_title": "Gaben is our one true God",
+    "default_icon": "gaben.png",
+    "default_popup": "popup.html"
+  }
+}
