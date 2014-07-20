@@ -1,135 +1,64 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
 
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="utf-8" />
+    <title>Team Page</title>
 
-    <title>Worth the Weight</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom CSS for the 'Round About' Template -->
-    <link href="css/round-about.css" rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="./gabenfavicon.ico">
-
+    <link rel="stylesheet" href="css/teampage.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
-
 <body>
-
-    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Our Lord and Savior Gaben</a>
+        <div>
+            <div>
+                <p id="lineup">LINE-UP</p>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <!--<div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#about">About</a>
-                    </li>
-                    <li><a href="#services">Services</a>
-                    </li>
-                    <li><a href="#contact">Contact</a>
-                    </li>
+            <div>
+            <p id="team_name"><strong>Our Lord and Savior Gaben</strong></p>
+            </div>
+
+            <div id='frame'>
+                <ul id="switches">
+                    <li><a href="javascript:void[0];" onclick="switch1('one');" style = "text-decoration: none"><span>Derek Kim</span></a></li>
+                    <li><a href="javascript:void[0];" onclick="switch1('two');" style = "text-decoration: none"><span>Oskar Zhang</span></a></li>
+                    <li><a href="javascript:void[0];" onclick="switch1('three');" style = "text-decoration: none"><span>Sam Ko</span></a></li>
+                    <li><a href="javascript:void[0];" onclick="switch1('four');" style = "text-decoration: none"><span>Jinying Ma</span></a></li>
+                    <li><a href="javascript:void[0];" onclick="switch1('five');" style = "text-decoration: none"><span>Matthew Hogains</span></a></li>
+                    <br/>
+                    <li><a href="javascript:void[0];" onclick="switch1('six');" style = "text-decoration: none"><span>Coach: Thomas Powell</span></a></li>
                 </ul>
-            </div>-->
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
 
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-lg-12">
-                <h1 class="page-header">Hello There
-                    <small>Do you have a minute to listen about our Lord and Savior Gaben?</small>
-                </h1>
-                <p>From Steam Summer Sales to delaying Half-Life Episode 3 by a day everytime someone calls Him fat, there must be minions dedicated to creating the content that His followers love so much.</p>
-                <p>He requested the help of five individuals to spread the good word. Are you ready for a miracle?</p>
-            </div>
-
-            <div class="col-lg-12">
-                <h2 class="page-header">His Worshippers</h2>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-lg-4 col-sm-6">
-                <img class="img-circle img-responsive" src="img/derek.jpg" alt="derek">
-                <h3>Derek Kim
-                    <small>Leader</small>
-                </h3>
-                <p>Former Bio major turned Gaben fanatic. Also I don't know what I'm doing.</p>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <img class="img-circle img-responsive" src="img/sam.jpg" alt="sam">
-                <h3>Sam Ko
-                    <small>Developer</small>
-                </h3>
-                <p>I spent $200 on the Steam Summer Sale 2014. Praise Gaben.</p>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <img class="img-circle img-responsive" src="img/oskar.jpg" alt="oskar">
-                <h3>Ronghuan Zhang
-                    <small>Developer</small>
-                </h3>
-                <p>Senior CS student. Trying to graduate! I give little kids ice-cream cones filled with habanero sauce!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <img class="img-circle img-responsive" src="img/matt.jpg" alt="matt">
-                <h3>Matthew Hogains
-                    <small>Developer</small>
-                </h3>
-                <p>The journey has just begun. Remember, it's not as long as it seems. </p>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <img class="img-circle img-responsive" src="img/jim.jpg" alt="jim">
-                <h3>Jinying Ma
-                    <small>Developer</small>
-                </h3>
-                <p>Try to make my life easier and understandable...</p>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <img class="img-circle img-responsive" src="img/lordgaben.png" alt="gaben">
-                <h3>Gabe Newell
-                    <small>Yes. He worships Himself.</small>
-                </h3>
-                <p>"I hope it was worth the weight." - Gaben 2014</p>
-            </div>
-        </div>
-
-        <hr>
-
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; CSE134B Team 17</p>
+                <div id="one">
+                    <img class="image" src="img/derek.jpg">
+                    <p class="des">Former Bio major turned Gaben fanatic. Also I don't know what I'm doing.</p>
+                </div>
+                <div id="two">
+                    <img class="image" src="img/okcar.jpg">
+                    <p class="des">Senior CS student. Trying to graduate! I give little kids ice-cream cones filled with habanero sauce!</p>
+                </div>
+                <div id="three">
+                    <img class="image" src="img/sam.jpg">
+                    <p class="des">I spent $200 on the Steam Summer Sale 2014. Praise Gaben.</p>
+                </div>
+                <div id="four">
+                    <img class="image" src="img/Ma.jpg">
+                    <p class="des">Try to make my life easier and understandable...</p>
+                </div>
+                <div id="five">
+                    <img class="image" src="img/matt.jpg">
+                    <p class="des">The journey has just begun. Remember, it's not as long as it seems.</p>
+                </div>
+                <div id="six">
+                    <img class="image" src="img/gif6.gif">
+                    <p class="des">Trade-off!!!</p>
                 </div>
             </div>
-        </footer>
 
-    </div>
-    <!-- /container -->
-
-    <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
-
+            <div id="logo">
+                <img src="img/logo1.jpg">
+            </div>
+        </div>
+<script src="js/switch_img.js"></script>
 </body>
-
 </html>
