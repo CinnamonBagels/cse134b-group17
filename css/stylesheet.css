@@ -9,28 +9,35 @@ body {
 body {
   background-image: -webkit-gradient(
 	linear,
+	left top,
 	left bottom,
-	right bottom,
-	color-stop(0, #301212),
-	color-stop(0.63, #16161F)
+	color-stop(0, #2E0A0A),
+	color-stop(1, #0D0F1F)
 );
-background-image: -o-linear-gradient(right, #301212 0%, #16161F 63%);
-background-image: -moz-linear-gradient(right, #301212 0%, #16161F 63%);
-background-image: -webkit-linear-gradient(right, #301212 0%, #16161F 63%);
-background-image: -ms-linear-gradient(right, #301212 0%, #16161F 63%);
-background-image: linear-gradient(to right, #301212 0%, #16161F 63%);  
+background-image: -o-linear-gradient(bottom, #2E0A0A 0%, #0D0F1F 100%);
+background-image: -moz-linear-gradient(bottom, #2E0A0A 0%, #0D0F1F 100%);
+background-image: -webkit-linear-gradient(bottom, #2E0A0A 0%, #0D0F1F 100%);
+background-image: -ms-linear-gradient(bottom, #2E0A0A 0%, #0D0F1F 100%);
+background-image: linear-gradient(to bottom, #2E0A0A 0%, #0D0F1F 100%);
   padding-top: 70px;
 }
 footer {
   padding: 30px 0;
 }
 
-input, text {
+input[type=text] {
     outline: none;
+    border: 1px solid grey;
+    height: 30px;
+    padding-left:10px;
+}
+
+input[type=text]:focus {
+  color: #fff;
 }
 
 #search {
-    background-color: grey;
+    background-color: #121211;
 }
 .list-group-item {
     background-color: #121211;
@@ -53,7 +60,7 @@ input, text {
 }
 
 .list-group a {
-    color: grey;
+    color: #FFF;
 }
 
 /*

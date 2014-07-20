@@ -1,0 +1,90 @@
+html {
+    background: url("image/teampage-bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -1;
+}
+
+
+#lineup{
+    font-size: 1em;
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    text-align: center;
+    color: #ffffff;
+    position: absolute;
+    top: 8%;
+    width: 100%;
+    z-index: 1;
+}
+
+
+#team_name {
+    text-align: center;
+    color: black;
+    background-color: #BDBDBD;
+    font-size: 2em;
+    position: absolute;
+    border-radius: 50em;
+    left: 20%;
+    right: 20%;
+    top: 15%;
+    z-index: 2;
+}
+
+#frame {
+    position: absolute;
+    top: 21.5%;
+    bottom: 25%;
+    left: 22%;
+    right: 22%;
+    padding: 4% 18% 25% 18%;
+    border-radius: 0px 0px 50px 50px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+
+}
+
+.image {
+    position: absolute;
+    width: 35%;
+    border-radius: 50%;
+    top: 3%;
+    left: 45%;
+}
+
+#logo > img{
+
+    width: 10%;
+    top: 80%;
+    bottom: 19%;
+    left:45%;
+    right:55%;
+    position: absolute;
+    z-index: 1;
+
+}
+
+#switches{
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    list-style-type: none;
+}
+
+a span{
+    color: white;
+    font-size:1em;
+    text-decoration: none;
+}
+
+.des {
+    position: absolute;
+    color: #ffffff;
+    font-size: 1.5em;
+    left: 40%;
+    right: 13%;
+    top: 70%;
+}
