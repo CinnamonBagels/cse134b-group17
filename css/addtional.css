@@ -1,0 +1,35 @@
+    .navbar {
+        z-index: 1000;
+        position: fixed;
+        left: 0%;
+        right: 0%;
+    }
+    #ubutton {
+        margin-top: 15px;
+        text-align: center;
+    }
+    footer ul {
+        float: left;
+    }
+    footer ul li {
+        display: inline;
+    }
+    #cright {
+        float: right;
+        line-height: 20px;  
+        margin-right: 2%;
+        color: #AAAAA4
+    }
+    #rating {
+        float: right;
+        right: 0%;
+    }
+    .thumbnail {
+        background-color: #000;
+    }
+
+    #paging {
+        text-align: center;
+        position: relative;
+        clear: both;
+    }
