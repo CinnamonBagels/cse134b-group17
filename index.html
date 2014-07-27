@@ -1,12 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
     <title>Our Lord and Savior Gaben</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type"text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link href="css/simple-sidebar.css" rel="stylesheet">
-        <link rel="stylesheet" type"text/css" href="css/addtional.css">
+    <link rel="stylesheet" type="text/css" href="css/addtional.css">
+	<link rel="stylesheet" type="text/css" href="./css/lightbox.css" />
+
 </head>
 
 <body>
@@ -21,48 +23,46 @@
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <form class="navbar-form navbar-left">
-      <input type="text" class="form-control col-lg-8" placeholder="Search">
+      <input type="text" class="form-control col-lg-8" placeholder="Search" size="75">
       <input type="button" class="btn btn-info" value="Search">
     </form>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Link</a></li>
+		<li><a href="#">Signup</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li>
-            <form>
-                <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Username</label>
-                    <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Username">
-                    </div>
-                </div>
-            </form>
+	  	<ul class="dropdown-menu">
+	  		<li>
+	  			<form>
+	  				<div class="form-group">
+	  					<label for="inputEmail" class="col-lg-2 control-label"></label>
+	  					<div class="col-lg-10">
+	  						<input type="text" class="form-control" id="inputEmail" placeholder="Username">
+	  					</div>
+	  				</div>
+	  			</form>
+	  		</li>
+	  		<li>
+	  			<form>
+	  				<div class="form-group">
+	  					<label for="inputPassword" class="col-lg-2 control-label"></label>
+	  					<div class="col-lg-10">
+	  						<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+	  						<div class="checkbox">
+	  							<label>
+	  								<input type="checkbox"> Stay logged in
+	  							</label>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</form>
+	  		</li>
+	  		<li>
+	  			<div class="form-group">
+	  		<div class="col-lg-10 col-lg-offset-2">
+	  			<button type="submit" class="btn btn-primary">Submit</button>
+	  		</div>
+</div>
           </li>
-          <li>
-            <form>
-                <div class="form-group">
-                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                    <div class="col-lg-10">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Stay logged in
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </form>
-          </li>
-          <li>
-            <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
-          </li>
-
-          <li><a href="#">Sign up</a></li>
         </ul>
       </li>
     </ul>
@@ -75,7 +75,9 @@
     <div id="sidebar-wrapper">
         <div id="ubutton">
             <button type="button" class="btn btn-danger">Upload</button>
+			<button type="button" class="btn btn-danger">Create a meme</button>
         </div>
+		<hr />
         <div>
             <ul class="sidebar-nav">
                 <li><a href="#">Category 1</a></li>
@@ -90,192 +92,134 @@
             <div class="row">
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img src="./img/1.jpg" alt="whuehue"  />
-                <div class="caption">
-                    <h6>Pic Title</h6>
-                    <p>Some Comment here</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Edit</a>
-                        <span id="rating">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        </span>
-                    </p>
-                </div>
+                <a href="img/1.jpg" data-lightbox="1" title="This is going to be a long string of text here, but"><img class="meme" src="./img/1.jpg" alt="whuehue" /></a>
+				<div class="hover">
+					<p>This is going to be a long string of te...</p>
+					<div class="post-info">
+						album · 54,535 Views
+					</div>
+				</div>
+            </div>
+        </div>
+		<div class="col-sm-6 col-md-3">
+			<div class="thumbnail">
+				<img class="meme" src="./img/search.jpg" alt="whuehue" />
+				<div class="hover">
+					<p>This is going to be a long string of te...</p>
+					<div class="post-info">
+						album · 54,535 Views
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-3">
+			<div class="thumbnail">
+				<img class="meme" src="./img/imgres.jpg" alt="whuehue" />
+				<div class="hover">
+					<p>This is going to be a long string of te...</p>
+					<div class="post-info">
+						album · 54,535 Views
+					</div>
+				</div>
+			</div>
+		</div>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
+				<div class="hover">
+					<p>This is going to be a long string of te...</p>
+					<div class="post-info">
+						album · 54,535 Views
+					</div>
+				</div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img src="./img/1.jpg" alt="whuehue"  />
-                <div class="caption">
-                    <h6>Pic Title</h6>
-                    <p>Some Comment here</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Edit</a>
-                        <span id="rating">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        </span>
-                    </p>
-                </div>
+                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
+				<div class="hover">
+					<p>This is going to be a long string of te...</p>
+					<div class="post-info">
+						album · 54,535 Views
+					</div>
+				</div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img src="./img/1.jpg" alt="whuehue"  />
-                <div class="caption">
-                    <h6>Pic Title</h6>
-                    <p>Some Comment here</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Edit</a>
-                        <span id="rating">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        </span>
-                    </p>
-                </div>
+                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
+				<div class="hover">
+					<p>This is going to be a long string of te...</p>
+					<div class="post-info">
+						album · 54,535 Views
+					</div>
+				</div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img src="./img/1.jpg" alt="whuehue"  />
-                <div class="caption">
-                    <h6>Pic Title</h6>
-                    <p>Some Comment here</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Edit</a>
-                        <span id="rating">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        </span>
-                    </p>
-                </div>
+                <img class="meme" src="./img/1.jpg" alt="whuehue" />
+				<div class="hover">
+					<p>This is going to be a long string of te...</p>
+					<div class="post-info">
+						album · 54,535 Views
+					</div>
+				</div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img src="./img/1.jpg" alt="whuehue"  />
-                <div class="caption">
-                    <h6>Pic Title</h6>
-                    <p>Some Comment here</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Edit</a>
-                        <span id="rating">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        </span>
-                    </p>
-                </div>
+                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
+				<div class="hover">
+					<p>This is going to be a long string of te...</p>
+					<div class="post-info">
+						album · 54,535 Views
+					</div>
+				</div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img src="./img/1.jpg" alt="whuehue"  />
-                <div class="caption">
-                    <h6>Pic Title</h6>
-                    <p>Some Comment here</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Edit</a>
-                        <span id="rating">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        </span>
-                    </p>
-                </div>
+                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
+				<div class="hover">
+					<p>This is going to be a long string of te...</p>
+					<div class="post-info">
+						album · 54,535 Views
+					</div>
+				</div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img src="./img/1.jpg" alt="whuehue"  />
-                <div class="caption">
-                    <h6>Pic Title</h6>
-                    <p>Some Comment here</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Edit</a>
-                        <span id="rating">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        </span>
-                    </p>
-                </div>
+                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
+				<div class="hover">
+					<p>This is going to be a long string of te...</p>
+					<div class="post-info">
+						album · 54,535 Views
+					</div>
+				</div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img src="./img/1.jpg" alt="whuehue"  />
-                <div class="caption">
-                <h6>Pic Title</h6>
-                    <p>Some Comment here</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Edit</a>
-                        <span id="rating">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        </span>
-                    </p>
-                </div>
+                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
+				<div class="hover">
+					<p>This is going to be a long string of te...</p>
+					<div class="post-info">
+						album · 54,535 Views
+					</div>
+				</div>
             </div>
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img src="./img/1.jpg" alt="whuehue"  />
-                <div class="caption">
-                  <h6>Pic Title</h6>
-                    <p>Some Comment here</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Edit</a>
-                        <span id="rating">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        </span>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img src="./img/1.jpg" alt="whuehue"  />
-                <div class="caption">
-                    <h6>Pic Title</h6>
-                    <p>Some Comment here</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Edit</a>
-                        <span id="rating">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        </span>
-                    </p>
-                </div>
+                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
+				<div class="hover">
+					<p>This is going to be a long string of te...</p>
+					<div class="post-info">
+						album · 54,535 Views
+					</div>
+				</div>
             </div>
         </div>
         <div id="paging">
@@ -304,19 +248,28 @@
                 </button>
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
-            <ul>
+            <ul id="info">
                 <li><a href=http://classes.pint.com/cse134b/ role="button" class="btn btn-link">About</a></li>
                 <li>|</li>
                 <li><a href="team-page.html" role="button" class="btn btn-link">Contact Us</a></li>
             </ul>
-            <p id="cright"> &copy; Our Lord and Savior Gaben</p>
-            </div>
+			</div>
         </div>
     </footer>
     
-    
-
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="./js/lightbox.min.js"></script>
+<script type="text/javascript">
+	$('.thumbnail > .hover').hide();
+
+	$('.thumbnail').hover(function () {
+		$('.hover', this).show();
+	},
+	function () {
+		$('.hover', this).hide();
+	});
+	
+	</script>
 <script src="js/bootstrap.js"></script>
 
 

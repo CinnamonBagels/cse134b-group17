@@ -8,8 +8,12 @@
         margin-top: 15px;
         text-align: center;
     }
-    footer ul {
-        float: left;
+    
+    #info {
+        text-align: center;
+        display: block;
+        height: 20px;
+        margin-bottom: 20px;
     }
     footer ul li {
         display: inline;
@@ -32,4 +36,15 @@
         text-align: center;
         position: relative;
         clear: both;
+    }
+
+    .hover {
+        z-index: 5;
+        position:absolute;
+        top: 105px;
+        background: rgba(0, 0, 0, 0.5); 
+        width: 267px;
+        height: 50px;
+        border: 1px solid grey;
+        border-radius: 5px;
     }

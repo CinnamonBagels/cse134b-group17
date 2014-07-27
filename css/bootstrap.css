@@ -930,7 +930,8 @@ img {
   display: block;
   width: 100% \9;
   max-width: 100%;
-  height: auto;
+  height: 150px;
+  max-height: 150px;
 }
 .img-rounded {
   border-radius: 6px;
@@ -945,7 +946,7 @@ img {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
-  width: 100% \9;
+  width: 100%;
   max-width: 100%;
   height: auto;
 }
@@ -2348,8 +2349,8 @@ output {
   padding: 8px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #272b30;
-  background-color: #ffffff;
+  color: #a0a0a0;
+  background-color: #404040;
   background-image: none;
   border: 1px solid #cccccc;
   border-radius: 4px;
@@ -3123,7 +3124,7 @@ tbody.collapse.in {
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 160px;
+  min-width: 250px;
   padding: 5px 0;
   margin: 2px 0 0;
   list-style: none;
@@ -3922,7 +3923,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-nav .open .dropdown-menu {
     position: static;
     float: none;
-    width: auto;
+    width: 400px;
     margin-top: 0;
     background-color: transparent;
     border: 0;
