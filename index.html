@@ -8,10 +8,113 @@
     <link href="css/simple-sidebar.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/addtional.css">
 	<link rel="stylesheet" type="text/css" href="./css/lightbox.css" />
+	<link rel="stylesheet" type="text/css" href="./css/jquery.tagsinput.css" />
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/start/jquery-ui.css">
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="./js/lightbox.min.js"></script>
+	<script src="./js/jquery.tagsinput.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$(".imgFrame").each(function () {
+				var url = $(this).attr("id");
+				// console.log(url);
+				$(this).css("background", "url(\"" + url + "\")");
+				$(this).css("background-repeat", "no-repeat");
+				$(this).css("background-size", "100% auto");
+				$(this).css("background-position", "center");
+			});
+
+			$(".lightboxLink").click(function (e) {
+				$("#lightbox_background").css("opacity", 1);
+				$("#lightbox_background").css("z-index", 10);
+
+				var url = $(this).attr("id");
+
+				$("#lightbox_picture").attr("src", url);
+			});
+
+			$("#lightbox_background").click(function (data, handler) {
+				if (data.target == this) {
+					$("#lightbox_background").css("opacity", 0);
+					setTimeout(function () {
+						$("#lightbox_background").css("z-index", -5);
+					}, 300);
+					$("#meme_gallery").css("position", "");
+				}
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		function onAddTag(tag) {
+			alert("Added a tag: " + tag);
+		}
+		function onRemoveTag(tag) {
+			alert("Removed a tag: " + tag);
+		}
+
+		function onChangeTag(input, tag) {
+			alert("Changed a tag: " + tag);
+		}
+
+		$(function () {
+
+			$('#tags_1').tagsInput({ width: 'auto' });
+			$('#tags_2').tagsInput({
+				width: 'auto',
+				onChange: function (elem, elem_tags) {
+					var languages = ['php', 'ruby', 'javascript'];
+					$('.tag', elem_tags).each(function () {
+						if ($(this).text().search(new RegExp('\\b(' + languages.join('|') + ')\\b')) >= 0)
+							$(this).css('background-color', 'yellow');
+					});
+				}
+			});
+			$('#tags_3').tagsInput({
+				width: 'auto',
+
+				//autocomplete_url:'test/fake_plaintext_endpoint.html' //jquery.autocomplete (not jquery ui)
+				autocomplete_url: 'test/fake_json_endpoint.html' // jquery ui autocomplete requires a json endpoint
+			});
+
+
+			// Uncomment this line to see the callback functions in action
+			//			$('input.tags').tagsInput({onAddTag:onAddTag,onRemoveTag:onRemoveTag,onChange: onChangeTag});
+
+			// Uncomment this line to see an input with no interface for adding new tags.
+			//			$('input.tags').tagsInput({interactive:false});
+		});
+	</script>
 
 </head>
 
 <body>
+	<div style="opacity: 0; z-index: -5;" id="lightbox_background">
+		<span class="helper"></span>
+		<div class="lightbox">
+			<img id="lightbox_picture" src="./img/1.jpg" alt="#">
+			<div id="user_functions_container">
+				<span class="starRating">
+					<input name="rating" value="1" type="radio"><i></i>
+					<input name="rating" value="2" type="radio"><i></i>
+					<input name="rating" value="3" type="radio"><i></i>
+					<input name="rating" value="4" type="radio"><i></i>
+					<input name="rating" value="5" type="radio"><i></i>
+				</span>
+				<form>
+					<p>
+						<label>Defaults:</label>
+						<input id="tags_1" type="text" class="tags" value="foo,bar,baz,roffle" style="display: none;">
+					</p>
+				</form>
+				<form id="comment_form">
+					<textarea name="commentBox" placeholder="write down your comment" id="comment_box"></textarea>
+					<input class="pictureFunctionButtons" id="save_pic_button" value="save" type="button">
+				</form>
+			</div>
+		</div>
+	</div>
   <div class="navbar navbar-default">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -92,7 +195,7 @@
             <div class="row">
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <a href="img/1.jpg" data-lightbox="1" title="This is going to be a long string of text here, but"><img class="meme" src="./img/1.jpg" alt="whuehue" /></a>
+				<img id="./img/imgres.jpg" class="lightboxLink" src="./img/imgres.jpg" alt="huehue">
 				<div class="hover">
 					<p>This is going to be a long string of te...</p>
 					<div class="post-info">
@@ -103,7 +206,7 @@
         </div>
 		<div class="col-sm-6 col-md-3">
 			<div class="thumbnail">
-				<img class="meme" src="./img/search.jpg" alt="whuehue" />
+				<img id="./img/1.jpg" class="lightboxLink" src="./img/imgres.jpg" alt="huehue">
 				<div class="hover">
 					<p>This is going to be a long string of te...</p>
 					<div class="post-info">
@@ -237,7 +340,6 @@
         </div>
     </div>
     </div>
-    
     <footer>
         <div class="navbar navbar-default navbar-fixed-bottom" style="min-height: 20px;">
             <div class="navbar-header">
@@ -256,10 +358,12 @@
 			</div>
         </div>
     </footer>
-    
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script type="text/javascript" src="./js/lightbox.min.js"></script>
+   
+
 <script type="text/javascript">
+
+
+
 	$('.thumbnail > .hover').hide();
 
 	$('.thumbnail').hover(function () {
@@ -268,7 +372,7 @@
 	function () {
 		$('.hover', this).hide();
 	});
-	
+
 	</script>
 <script src="js/bootstrap.js"></script>
 
