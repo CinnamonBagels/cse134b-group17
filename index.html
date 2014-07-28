@@ -139,7 +139,7 @@
         <hr />
         <div>
             <ul class="sidebar-nav">
-                <li><input type="text" class="add-cat-field" id="Text1" maxlength="21"
+                <li><input type="text" class="add-cat-field" id="Text1" maxlength="20"
                         onKeyPress="check_length(this.value)" placeholder="Add New Category...">
                     <input type="submit" onClick="addCat(Text1)" class="add-cat-btn" value="+" /></li>
                 <li id="Cats"><a href="#">Cats
@@ -396,7 +396,7 @@
 
     /* Functions to check validity of side-bar text field entries */
     function check_length(val) {
-        maxLength = 20;
+        maxLength = 19;
 
         if (val.length > maxLength) {
             if ($("#cat-min-alert"))
@@ -453,6 +453,20 @@
             return false;
         }
     }
+	/* Handles events when alerts are still present even after fixing the alert */
+	$("#Text1").on("keydown",function(e) {
+	
+		if ($("#cat-max-alert"))
+            $("#cat-max-alert").closest('li').remove();
+            
+        if ($("#cat-exist-alert"))
+            $("#cat-exist-alert").closest('li').remove();
+       
+        if ($("cat-min-alert")) 
+        	$("#cat-min-alert").closest('li').remove();	 
+           
+	});
+    
 
 </script>
 
