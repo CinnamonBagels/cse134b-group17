@@ -2,49 +2,21 @@
 
 <html>
 <head>
-    <title>Our Lord and Savior Gaben</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/addtional.css">
-	<link rel="stylesheet" type="text/css" href="./css/lightbox.css" />
+  <title>Our Lord and Savior Gaben</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/simple-sidebar.css" >
+  <link rel="stylesheet" type="text/css" href="css/addtional.css">
+  <link rel="stylesheet" type="text/css" href="css/rating.css">
 	<link rel="stylesheet" type="text/css" href="./css/jquery.tagsinput.css" />
 	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/start/jquery-ui.css">
+
+
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script type="text/javascript" src="./js/lightbox.min.js"></script>
+  <script type="text/javascript" src="js/lightbox.js"></script>
 	<script src="./js/jquery.tagsinput.min.js"></script>
+  <script src="js/bootstrap.js"></script>
 
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$(".imgFrame").each(function () {
-				var url = $(this).attr("id");
-				// console.log(url);
-				$(this).css("background", "url(\"" + url + "\")");
-				$(this).css("background-repeat", "no-repeat");
-				$(this).css("background-size", "100% auto");
-				$(this).css("background-position", "center");
-			});
-
-			$(".lightboxLink").click(function (e) {
-				$("#lightbox_background").css("opacity", 1);
-				$("#lightbox_background").css("z-index", 10);
-
-				var url = $(this).attr("id");
-
-				$("#lightbox_picture").attr("src", url);
-			});
-
-			$("#lightbox_background").click(function (data, handler) {
-				if (data.target == this) {
-					$("#lightbox_background").css("opacity", 0);
-					setTimeout(function () {
-						$("#lightbox_background").css("z-index", -5);
-					}, 300);
-					$("#meme_gallery").css("position", "");
-				}
-			});
-		});
-	</script>
 
 	<script type="text/javascript">
 		function onAddTag(tag) {
@@ -86,35 +58,10 @@
 			//			$('input.tags').tagsInput({interactive:false});
 		});
 	</script>
-
 </head>
 
 <body>
-	<div style="opacity: 0; z-index: -5;" id="lightbox_background">
-		<span class="helper"></span>
-		<div class="lightbox">
-			<img id="lightbox_picture" src="./img/1.jpg" alt="#">
-			<div id="user_functions_container">
-				<span class="starRating">
-					<input name="rating" value="1" type="radio"><i></i>
-					<input name="rating" value="2" type="radio"><i></i>
-					<input name="rating" value="3" type="radio"><i></i>
-					<input name="rating" value="4" type="radio"><i></i>
-					<input name="rating" value="5" type="radio"><i></i>
-				</span>
-				<form>
-					<p>
-						<label>Defaults:</label>
-						<input id="tags_1" type="text" class="tags" value="foo,bar,baz,roffle" style="display: none;">
-					</p>
-				</form>
-				<form id="comment_form">
-					<textarea name="commentBox" placeholder="write down your comment" id="comment_box"></textarea>
-					<input class="pictureFunctionButtons" id="save_pic_button" value="save" type="button">
-				</form>
-			</div>
-		</div>
-	</div>
+
   <div class="navbar navbar-default">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -126,7 +73,7 @@
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <form class="navbar-form navbar-left">
-      <input type="text" class="form-control col-lg-8" placeholder="Search" size="75">
+      <input type="text" class="form-control col-lg-8" placeholder="Search" size="65">
       <input type="button" class="btn btn-info" value="Search">
     </form>
     <ul class="nav navbar-nav navbar-right">
@@ -193,28 +140,31 @@
     <div id="page-content-wrapper" >
         <div class="container-fluid">
             <div class="row">
+
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
 				<img id="./img/imgres.jpg" class="lightboxLink" src="./img/imgres.jpg" alt="huehue">
 				<div class="hover">
 					<p>This is going to be a long string of te...</p>
 					<div class="post-info">
-						album · 54,535 Views
+						Album : Random
 					</div>
 				</div>
             </div>
         </div>
+
 		<div class="col-sm-6 col-md-3">
 			<div class="thumbnail">
-				<img id="./img/1.jpg" class="lightboxLink" src="./img/imgres.jpg" alt="huehue">
+				<img id="./img/1.jpg" class="lightboxLink" src="./img/1.jpg" alt="huehue">
 				<div class="hover">
 					<p>This is going to be a long string of te...</p>
 					<div class="post-info">
-						album · 54,535 Views
+						Album : Cat
 					</div>
 				</div>
 			</div>
 		</div>
+
 		<div class="col-sm-6 col-md-3">
 			<div class="thumbnail">
 				<img class="meme" src="./img/imgres.jpg" alt="whuehue" />
@@ -226,6 +176,7 @@
 				</div>
 			</div>
 		</div>
+
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
                 <img class="meme" src="./img/1.jpg" alt="whuehue"  />
@@ -325,6 +276,31 @@
 				</div>
             </div>
         </div>
+
+          <div style="opacity: 0; z-index: -5;" id="lightbox_background">
+    <div class="lightbox">
+      <img id="lightbox_picture" src="./img/1.jpg" alt="#">
+      <div id="user_functions_container">
+        <span class="starRating">
+          <input name="rating" value="1" type="radio"><i></i>
+          <input name="rating" value="2" type="radio"><i></i>
+          <input name="rating" value="3" type="radio"><i></i>
+          <input name="rating" value="4" type="radio"><i></i>
+          <input name="rating" value="5" type="radio"><i></i>
+        </span>
+        <form>
+          <p>
+            <input id="tags_1" type="text" class="tags" value="foo,bar,baz,roffle" style="display: none;">
+          </p>
+        </form>
+        <form id="comment_form">
+          <textarea name="commentBox" placeholder="write down your comment" id="comment_box"></textarea>
+          <input class="pictureFunctionButtons" id="save_pic_button" value="Save" type="button">
+        </form>
+      </div>
+    </div>
+  </div>
+
         <div id="paging">
     <ul class="pagination">
         <li class="disabled"><a href="#">&laquo;</a></li>
@@ -351,9 +327,9 @@
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
             <ul id="info">
-                <li><a href=http://classes.pint.com/cse134b/ role="button" class="btn btn-link">About</a></li>
+                <li><a href=http://classes.pint.com/cse134b/ role="button" class="btn btn-link">Class Page</a></li>
                 <li>|</li>
-                <li><a href="team-page.html" role="button" class="btn btn-link">Contact Us</a></li>
+                <li><a href="team-page.html" role="button" class="btn btn-link">Meet the Team</a></li>
             </ul>
 			</div>
         </div>
@@ -374,7 +350,6 @@
 	});
 
 	</script>
-<script src="js/bootstrap.js"></script>
 
 
 </body>
