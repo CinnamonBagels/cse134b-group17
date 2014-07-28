@@ -142,11 +142,15 @@
                 <li><input type="text" class="add-cat-field" id="Text1" maxlength="21"
                         onKeyPress="check_length(this.value)" placeholder=" Add New Category...">
                     <input type="submit" onClick="addCat(Text1)" class="add-cat-btn" value="+" /></li>
-                <li><a href="#">Cats
+                <li id="Cats"><a href="#">Cats
                     <input type="submit" class="cat-delete" value= "x" /></a></li>
-                <li><a href="#">GabeN
+                <li id="GabeN"><a href="#">GabeN
                     <input type="submit" class="cat-delete" value= "x" /></a></li>
-                <li><a href="#">Reaction Gifs               
+                <li id="Reaction Gifs"><a href="#">Reaction Gifs               
+                    <input type="submit" class="cat-delete" value= "x" /></a></li>
+                <li id="Awkward Seal"><a href="#">Awkward Seal             
+                    <input type="submit" class="cat-delete" value= "x" /></a></li>
+                <li id="Tpowell's Face"><a href="#">TPowell's Face           
                     <input type="submit" class="cat-delete" value= "x" /></a></li>
             </ul>
         </div>
@@ -350,7 +354,6 @@
         </div>
     </footer>
    
-
 <script type="text/javascript">
 
 
@@ -369,9 +372,12 @@
         if (check_min(id) == true) {
             return;
         }
+        if (check_exist(id) == true) {
+            return;
+        }
         else {
             var newCat = $(".add-cat-field").val();
-            $(".sidebar-nav").append("<li><a href='#'>" + newCat +
+            $(".sidebar-nav").append("<li id=" + newCat + "><a href='#'>" + newCat +
             "<input type='submit' class='cat-delete' value= 'x' /></a></li>");
         }
     }
@@ -381,13 +387,24 @@
         $(this).closest('li').remove();
     });
 
+    /* Function that allows for enter button on the add-category text field */ 
+    $('.add-cat-field').keyup( function (event) {
+        if( event.keyCode == 13){
+            $(".add-cat-btn").click();
+        }
+    });
+
     /* Functions to check validity of side-bar text field entries */
     function check_length(val) {
         maxLength = 20;
-        if ($("#cat-min-alert"))
-            $("#cat-min-alert").closest('li').remove();
 
         if (val.length > maxLength) {
+            if ($("#cat-min-alert"))
+                $("#cat-min-alert").closest('li').remove();
+ 
+            if ($("#cat-exist-alert"))
+                $("#cat-exist-alert").closest('li').remove();
+
             if (!$("#cat-max-alert").length) {
                 $(".sidebar-nav").prepend("<li><p id=cat-max-alert style='font-size:10; color:rgb(155,6,6);'>"
                     + "Limit of characters is 20 </p></li>");
@@ -400,6 +417,9 @@
 
             if ($("#cat-max-alert"))
                 $("#cat-max-alert").closest('li').remove();
+           
+            if ($("#cat-exist-alert"))
+                $("#cat-exist-alert").closest('li').remove();
 
             if (!$("#cat-min-alert").length) {
                 $(".sidebar-nav").prepend("<li><p id=cat-min-alert style='font-size:10; color:rgb(155,6,6);'>"
@@ -409,6 +429,27 @@
             return true;
         }
         else {
+            return false;
+        }
+    }
+    /* Function checks if list element of ID already exists. Returns true if it does */
+    function check_exist(id) {
+        var idVal = id.value;
+        if ( $('#' + idVal).length) {
+            if ($("#cat-min-alert"))
+                $("#cat-min-alert").closest('li').remove();
+
+            if ($("#cat-max-alert"))
+                $("#cat-max-alert").closest('li').remove();
+
+            if (!$("#cat-exist-alert").length) {
+                $(".sidebar-nav").prepend("<li><p id=cat-exist-alert style='font-size:10;" + 
+                    "color:rgb(155,6,6);'>Category already exists. </p></li>");
+            }
+
+            return true;
+        }
+        else{
             return false;
         }
     }
