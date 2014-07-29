@@ -24,4 +24,11 @@ chrome.runtime.onInstalled.addListener(function() {
 
 });
 
+// function bound to contextMenu options with onclicked event.
+function chromeContextClicked() {
+ 
+};
+//binds chrome
+chrome.contextMenus.onClicked.addListener(chromeContextClicked);
+
 
