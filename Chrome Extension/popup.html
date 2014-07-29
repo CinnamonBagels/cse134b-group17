@@ -6,28 +6,12 @@
 	<title>Save Pictures to your Drop-box</title>
 
 	<link rel="stylesheet" type="text/css" href="./css/stylesheet.css" />
-
-	<script type="text/javascript">
-		//whoops dont need this attempt failed.
-		/*(document.getElementById('save').addEventListener('click', save, false);
-
-		function save() {
-			$('#save').on('click', function (e) {
-				e.originalEvent.stopPropagation();
-				e.originalEvent.preventDefault();
-				document.write('huehue');
-			});
-		})();
-		function save() {
-			alert('huehue');
-			return false;
-		}*/
-	</script>
+	<script src="../js/dropzone.js"></script>
 
 </head>
 <body>
 	<div id="message">
-		These are your Saved memes
+		These are your 5 recent saved memes
 	</div>
 	<div id="content">
 		<img src="img/gaben.png" alt="who"/>
@@ -38,10 +22,17 @@
 		<img src="img/gaben3.jpg" alt="woof"/>
 	</div>
 	<div id="actions">
-		<a id="save" href="#">Send these memes to my Dropbox!</a>
+		<form action="/file-upload" class="dropzone" id="dropzone1" title="dropzone"></form>
 		<a id="clear" href="popup.html">Clear my meme list</a>
 	</div>
 
-	<script src="./js/jquery-1.10.2.js"></script>
+	<script src="../js/jquery-1.10.2.js"></script>
+	<script type="text/javascript">
+	
+	$("#save").click(function(){
+		alert("huehue");
+	});
+	
+	</script>
 </body>
 </html>
