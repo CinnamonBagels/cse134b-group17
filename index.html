@@ -10,11 +10,13 @@
   <link rel="stylesheet" type="text/css" href="css/rating.css">
   <link rel="stylesheet" type="text/css" href="./css/jquery.tagsinput.css" />
   <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/start/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="./css/lightbox.css" />
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-  <script type="text/javascript" src="js/lightbox.js"></script>
+  <script type="text/javascript" src="js/lightbox_a.js"></script>
   <script src="./js/jquery.tagsinput.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="./js/firebase.js"></script>
+  <script src="./js/lightbox.min.js"></script>
 
 
   	<script type="text/javascript">
@@ -98,7 +100,7 @@
 	  						<input type="password" class="form-control" id="inputPassword" placeholder="Password">
 	  						<div class="checkbox">
 	  							<label>
-	  								<input type="checkbox"> Stay logged in
+	  								<input type="checkbox"> Remember me
 	  							</label>
 	  						</div>
 	  					</div>
@@ -108,7 +110,7 @@
 	  		<li>
 	  			<div class="form-group">
 	  		<div class="col-lg-10 col-lg-offset-2">
-	  			<button type="submit" class="btn btn-primary">Submit</button>
+	  			<button type="submit" class="btn btn-primary">Sign in</button>
 	  		</div>
 </div>
           </li>
@@ -162,6 +164,7 @@
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
 				<img id="./img/imgres.jpg" class="lightboxLink" src="./img/imgres.jpg" alt="huehue">
+                <a class="magnify" href="./img/imgres.jpg" data-lightbox="imgres">Enlarge</a>
 				<div class="hover">
 					<p>This is going to be a long string of te...</p>
 					<div class="post-info">
@@ -174,6 +177,7 @@
 		<div class="col-sm-6 col-md-3">
 			<div class="thumbnail">
 				<img id="./img/1.jpg" class="lightboxLink" src="./img/1.jpg" alt="huehue">
+                <a class="magnify" href="./img/1.jpg" data-lightbox="1">Enlarge</a>
 				<div class="hover">
 					<p>This is going to be a long string of te...</p>
 					<div class="post-info">
@@ -296,7 +300,8 @@
         </div>
 
           <div style="opacity: 0; z-index: -5;" id="lightbox_background">
-    <div class="lightbox">
+
+    <div class="lightbox_a">
       <img id="lightbox_picture" src="./img/1.jpg" alt="#">
       <div id="user_functions_container">
         <span class="starRating">
