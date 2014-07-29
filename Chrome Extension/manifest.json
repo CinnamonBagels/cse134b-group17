@@ -5,7 +5,7 @@
 
   "version": "1.0",
 
-  "description": "My first Chrome extension.",
+  "description": "MemeMaster",
 
   "browser_action": {
   	"default_title": "Gaben is our one true God",
@@ -13,5 +13,15 @@
     "default_popup": "popup.html"
   },
 
-  "permissions": ["<all_urls>"]
-}
+  "permissions": [
+    "<all_urls>",
+    "contextMenus"
+    ],
+  "icons": {
+    
+  },
+  "background": {
+    "persistent": false,
+    "scripts": ["./js/extensions.js"]
+  }
+  }
