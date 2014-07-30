@@ -184,7 +184,8 @@
     font-weight: normal;
     display: inline-block;
     line-height: 0px;
-    padding: 7px 4px 11px;
+    color: #666666;
+	padding: 7px 4px 11px;
 }
 
 .cat-delete:hover{
