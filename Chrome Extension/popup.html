@@ -6,7 +6,8 @@
 	<title>Save Pictures to your Drop-box</title>
 
 	<link rel="stylesheet" type="text/css" href="./css/stylesheet.css" />
-	<script src="../js/dropzone.js"></script>
+	<script src="../js/jquery-1.10.2.js"></script>
+	<script src="./js/dropzone.js"></script>
 
 </head>
 <body>
@@ -21,20 +22,13 @@
 		<img src="img/gaben2.png" alt="out"/>
 		<img src="img/gaben3.jpg" alt="woof"/>
 	</div>
-	<div id="actions">
-		<form action="/file-upload" class="dropzone dz-clickable" id="dropzone1" title="dropzone">
+	<div id="upload">
+        <form action="/file-upload" class="dropzone dz-clickable" id="dropzone1" title="dropzone">
     		<div class="dz-default dz-message"></div>
 		</form>
+    </div>
+	<div id="actions">
 		<a id="clear" href="popup.html">Clear my meme list</a>
 	</div>
-
-	<script src="../js/jquery-1.10.2.js"></script>
-	<script type="text/javascript">
-	
-	$("#save").click(function(){
-		alert("huehue");
-	});
-	
-	</script>
 </body>
 </html>
