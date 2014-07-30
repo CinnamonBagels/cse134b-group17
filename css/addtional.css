@@ -58,7 +58,9 @@ footer ul li {
     z-index: 5;
     position:absolute;
     top: 105px;
-    background: rgba(0, 0, 0, 0.75); 
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); 
     width: 100%;
     height: 50px;
     border: 1px solid grey;

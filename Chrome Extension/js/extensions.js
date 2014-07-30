@@ -4,31 +4,38 @@
 *
 */
 
+var fbRef = new Firebase("https://torid-fire-9403.firebaseio.com/");
 
+var imgUrl;
+
+document.getElementsByTagName("img").onclick = function(){
+    console.log(this.src);
+};
 // Set up context menu tree at install time.
 chrome.runtime.onInstalled.addListener(function() {
   // Create one test item for each context type.
-  var contexts = ["page","selection","link","editable","image","video",
-                  "audio"];
+  var contexts = ["image"];
   for (var i = 0; i < contexts.length; i++) {
     var context = contexts[i];
     chrome.tabs.getSelected(null, function(tab) {
        tabId = tab.id;
-       tabUrl = tab.url; 
+       imgUrl = tab.src; 
+       
     });
-    if (context == "image")
-        var id = chrome.contextMenus.create({"title": "Save your meme", "contexts":[context],
-                                         "id": "context_save" + context});
+        var id = chrome.contextMenus.create({"title": "Save your meme", "contexts":[context], "id": "context_save" + context});
+        
         
   }
 
 });
 
-// function bound to contextMenu options with onclicked event.
-function chromeContextClicked() {
- 
-};
-//binds chrome
-chrome.contextMenus.onClicked.addListener(chromeContextClicked);
+//binds chrome onclicked
+chrome.contextMenus.onClicked.addListener(function(info) {
+    alert(info.srcUrl);
+    
+    
+    
+    
+});
 
 
