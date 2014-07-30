@@ -6,7 +6,6 @@
 
 var fbRef = new Firebase("https://torid-fire-9403.firebaseio.com/");
 
-var imgUrl;
 
 document.getElementsByTagName("img").onclick = function(){
     console.log(this.src);
@@ -32,8 +31,6 @@ chrome.runtime.onInstalled.addListener(function() {
 //binds chrome onclicked
 chrome.contextMenus.onClicked.addListener(function(info) {
     alert(info.srcUrl);
-    
-    
     
     
 });
