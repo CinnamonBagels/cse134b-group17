@@ -226,7 +226,14 @@ footer ul li {
 }
 
 .magnify {
+   
+}
+
+.expandIcon {
     position: absolute;
+    top: .25em;
+    right: .25em;
+    height: 3em !important;
 }
 
 /* Responsive Design Section */
