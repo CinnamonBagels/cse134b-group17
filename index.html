@@ -24,419 +24,426 @@
 </head>
 
 <body>
-
   <div class="navbar navbar-default">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">Our Lord and Savior Gaben </a>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Our Lord and Savior Gaben </a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <form class="navbar-form navbar-left">
+        <input type="text" class="form-control col-lg-8" placeholder="Search" size="65">
+        <input type="button" class="btn btn-info" value="Search">
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Signup</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li>
+              <form>
+                <div class="col-lg-10 col-lg-offset-1">
+                  <input type="text" class="form-control" id="inputEmail" placeholder="Username">
+                </div>
+              </form>
+            </li>
+            <li>
+              <form>
+                <div class="col-lg-10 col-lg-offset-1">
+                  <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Remember me
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </li>
+            <li>
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-1">
+                  <button type="submit" class="btn btn-info btn-signin btn-login">Sign in</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="navbar-collapse collapse navbar-responsive-collapse">
-    <form class="navbar-form navbar-left">
-      <input type="text" class="form-control col-lg-8" placeholder="Search" size="65">
-      <input type="button" class="btn btn-info" value="Search">
-    </form>
-    <ul class="nav navbar-nav navbar-right">
-		<li><a href="#">Signup</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
-	  	<ul class="dropdown-menu">
-	  		<li>
-	  			<form>
-	  				<div class="col-lg-10 col-lg-offset-1">
-	  					<input type="text" class="form-control" id="inputEmail" placeholder="Username">
-	  				</div>
-	  			</form>
-	  		</li>
-	  		<li>
-	  			<form>
-	  					<div class="col-lg-10 col-lg-offset-1">
-	  						<input type="password" class="form-control" id="inputPassword" placeholder="Password">
-	  						<div class="checkbox">
-	  							<label>
-	  								<input type="checkbox"> Remember me
-	  							</label>
-	  						</div>
-	  					</div>
-	  			</form>
-	  		</li>
-	  		<li>
-	  			<div class="form-group">
-	  		<div class="col-lg-10 col-lg-offset-1">
-	  			<button type="submit" class="btn btn-info btn-signin btn-login">Sign in</button>
-	  		</div>
-</div>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  </div>
-  
 
-    
-    <div id="wrapper">
+
+
+  <div id="wrapper">
     <div id="sidebar-wrapper">
-        <div id="ubutton">
-            <button type="button" class="btn btn-danger" style="position:relative">Upload</button>
-			<button type="button" class="btn btn-danger">Create a meme</button>
-        </div>
-		    <hr />
-        <div class="sort">
-            <p>Sort by:</p>
-            <ul class="sort-cat">
-                <li><a href="#">Title</a></li>
-                <li><a href="#">Rating</a></li>
-                <li><a href="#">Most Recent</a></li>
-            </ul>
-        </div>
-        <hr />
-        <div>
-            <ul class="sidebar-nav">
-                <li><input type="text" class="add-cat-field" id="Text1" maxlength="20"
-                        onKeyPress="check_length(this.value)" placeholder="Add New Category...">
-                    <input type="submit" onClick="addCat(Text1)" class="add-cat-btn" value="+" /></li>
-                <li id="Cats"><a href="#">Cats
-                    <input type="submit" class="cat-delete" value= "x" /></a></li>
-                <li id="GabeN"><a href="#">GabeN
-                    <input type="submit" class="cat-delete" value= "x" /></a></li>
-                <li id="Reaction Gifs"><a href="#">Reaction Gifs               
-                    <input type="submit" class="cat-delete" value= "x" /></a></li>
-                <li id="Awkward Seal"><a href="#">Awkward Seal             
-                    <input type="submit" class="cat-delete" value= "x" /></a></li>
-                <li id="Tpowell's Face"><a href="#">TPowell's Face           
-                    <input type="submit" class="cat-delete" value= "x" /></a></li>
-            </ul>
-        </div>
-    </div>
-    
-    <div id="page-content-wrapper" >
-        <div class="container-fluid">
-            <div class="row">
-
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-				<img id="./img/imgres.jpg" class="lightboxLink" src="./img/imgres.jpg" alt="huehue">
-                <a class="magnify" href="./img/imgres.jpg" data-lightbox="imgres">Enlarge</a>
-				<div class="hover">
-					<p>This is going to be a long string of te...</p>
-					<div class="post-info">
-						Album : Random
-					</div>
-				</div>
-            </div>
-        </div>
-
-		<div class="col-sm-6 col-md-3">
-			<div class="thumbnail">
-				<img id="./img/1.jpg" class="lightboxLink" src="./img/1.jpg" alt="huehue">
-                <a class="magnify" href="./img/1.jpg" data-lightbox="1">Enlarge</a>
-				<div class="hover">
-					<p>This is going to be a long string of te...</p>
-					<div class="post-info">
-						Album : Cat
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-sm-6 col-md-3">
-			<div class="thumbnail">
-				<img class="meme" src="./img/imgres.jpg" alt="whuehue" />
-				<div class="hover">
-					<p>This is going to be a long string of te...</p>
-					<div class="post-info">
-						album · 54,535 Views
-					</div>
-				</div>
-			</div>
-		</div>
-
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
-				<div class="hover">
-					<p>This is going to be a long string of te...</p>
-					<div class="post-info">
-						album · 54,535 Views
-					</div>
-				</div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
-				<div class="hover">
-					<p>This is going to be a long string of te...</p>
-					<div class="post-info">
-						album · 54,535 Views
-					</div>
-				</div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
-				<div class="hover">
-					<p>This is going to be a long string of te...</p>
-					<div class="post-info">
-						album · 54,535 Views
-					</div>
-				</div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img class="meme" src="./img/1.jpg" alt="whuehue" />
-				<div class="hover">
-					<p>This is going to be a long string of te...</p>
-					<div class="post-info">
-						album · 54,535 Views
-					</div>
-				</div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
-				<div class="hover">
-					<p>This is going to be a long string of te...</p>
-					<div class="post-info">
-						album · 54,535 Views
-					</div>
-				</div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
-				<div class="hover">
-					<p>This is going to be a long string of te...</p>
-					<div class="post-info">
-						album · 54,535 Views
-					</div>
-				</div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
-				<div class="hover">
-					<p>This is going to be a long string of te...</p>
-					<div class="post-info">
-						album · 54,535 Views
-					</div>
-				</div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
-				<div class="hover">
-					<p>This is going to be a long string of te...</p>
-					<div class="post-info">
-						album · 54,535 Views
-					</div>
-				</div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img class="meme" src="./img/1.jpg" alt="whuehue"  />
-				<div class="hover">
-					<p>This is going to be a long string of te...</p>
-					<div class="post-info">
-						album · 54,535 Views
-					</div>
-				</div>
-            </div>
-        </div>
-
-          <div style="opacity: 0; z-index: -5;" id="lightbox_background">
-
-    <div class="lightbox_a">
-      <img id="lightbox_picture" src="./img/1.jpg" alt="#">
-      <div id="user_functions_container">
-        <p style="color: white; float: left; margin: 0; font-size: large; color: #FFE181; font-style:italic;">Rating</p>
-        <span class="starRating">
-          <input name="rating" value="1" type="radio"><i></i>
-          <input name="rating" value="2" type="radio"><i></i>
-          <input name="rating" value="3" type="radio"><i></i>
-          <input name="rating" value="4" type="radio"><i></i>
-          <input name="rating" value="5" type="radio"><i></i>
-        </span>
-        <form>
-          <p>
-            <input id="tags_1" type="text" class="tags" value="foo,bar,baz,roffle" style="display: none;">
-          </p>
-        </form>
-        <form id="comment_form">
-          <textarea name="commentBox" placeholder="write down your comment" id="comment_box"></textarea>
-          <input class="btn btn-danger btn-save" value="Save" type="button">
-        </form>
+      <div id="ubutton">
+        <button type="button" class="btn btn-danger" style="position:relative">Upload</button>
+        <button type="button" class="btn btn-danger">Create a meme</button>
       </div>
-    </div>
-  </div>
+      <hr />
+      <div class="sort">
+        <p>Sort by:</p>
+        <ul class="sort-cat">
+          <li><a href="#">Title</a></li>
+          <li><a href="#">Rating</a></li>
+          <li><a href="#">Most Recent</a></li>
+        </ul>
+      </div>
+      <hr />
+      <div>
+        <ul class="sidebar-nav">
+          <li><input type="text" class="add-cat-field" id="Text1" maxlength="20"
+            onKeyPress="check_length(this.value)" placeholder="Add New Category...">
+            <input type="submit" onClick="addCat(Text1)" class="add-cat-btn" value="+" /></li>
+            <li id="Cats"><a href="#">Cats
+              <input type="submit" class="cat-delete" value= "x" /></a></li>
+              <li id="GabeN"><a href="#">GabeN
+                <input type="submit" class="cat-delete" value= "x" /></a></li>
+                <li id="Reaction Gifs"><a href="#">Reaction Gifs               
+                  <input type="submit" class="cat-delete" value= "x" /></a></li>
+                  <li id="Awkward Seal"><a href="#">Awkward Seal             
+                    <input type="submit" class="cat-delete" value= "x" /></a></li>
+                    <li id="Tpowell's Face"><a href="#">TPowell's Face           
+                      <input type="submit" class="cat-delete" value= "x" /></a></li>
+                    </ul>
+                  </div>
+                </div>
 
-        <div id="paging">
-    <ul class="pagination">
-        <li class="disabled"><a href="#">&laquo;</a></li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">&raquo;</a></li>
-    </ul>
-    </div>
-        </div>
-        </div>
-    </div>
-    </div>
-    <footer>
-        <div class="navbar navbar-default navbar-fixed-bottom" style="min-height: 20px;">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse navbar-responsive-collapse">
-            <ul id="info">
-                <li><a href=http://classes.pint.com/cse134b/ role="button" class="btn btn-link">Class Page</a></li>
-                <li>|</li>
-                <li><a href="team-page.html" role="button" class="btn btn-link">Meet the Team</a></li>
-            </ul>
-			</div>
-        </div>
-    </footer>
-   
-<script type="text/javascript">
+                <div id="page-content-wrapper" >
+                  <div class="container-fluid">
+                    <div class="row">
 
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img id="./img/2.jpg" class="lightboxLink" src="./img/2.jpg" alt="huehue">
+                          <a class="magnify" href="./img/2.jpg" data-lightbox="2">Enlarge</a>
+                          <div class="hover">
+                            <p>This is going to be a long string of te...</p>
+                            <div class="post-info">
+                              Album : Random
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img id="./img/1.jpg" class="lightboxLink" src="./img/1.jpg" alt="huehue">
+                          <a class="magnify" href="./img/1.jpg" data-lightbox="1">Enlarge</a>
+                          <div class="hover">
+                            <p>This is going to be a long string of te...</p>
+                            <div class="post-info">
+                              Album : Cat
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-	$('.thumbnail > .hover').hide();
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img id="./img/3.jpg" class="lightboxLink" src="./img/3.jpg" alt="huehue">
+                          <a class="magnify" href="./img/3.jpg" data-lightbox="3">Enlarge</a>
+                          <div class="hover">
+                            <p>This is going to be a long string of te...</p>
+                            <div class="post-info">
+                              album · 54,535 Views
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-	$('.thumbnail').hover(function () {
-		$('.hover', this).show();
-	},
-	function () {
-		$('.hover', this).hide();
-	});
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img id="./img/4.jpg" class="lightboxLink" src="./img/4.jpg" alt="huehue">
+                          <a class="magnify" href="./img/4.jpg" data-lightbox="4">Enlarge</a>
+                          <div class="hover">
+                            <p>This is going to be a long string of te...</p>
+                            <div class="post-info">
+                              album · 54,535 Views
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img id="./img/5.jpg" class="lightboxLink" src="./img/5.jpg" alt="huehue">
+                          <a class="magnify" href="./img/5.jpg" data-lightbox="5">Enlarge</a>
+                          <div class="hover">
+                            <p>This is going to be a long string of te...</p>
+                            <div class="post-info">
+                              album · 54,535 Views
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img id="./img/6.jpg" class="lightboxLink" src="./img/6.jpg" alt="huehue">
+                          <a class="magnify" href="./img/6.jpg" data-lightbox="6">Enlarge</a>
+                          <div class="hover">
+                            <p>This is going to be a long string of te...</p>
+                            <div class="post-info">
+                              album · 54,535 Views
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img id="./img/g1.gif" class="lightboxLink" src="./img/g1.gif" alt="huehue">
+                          <a class="magnify" href="./img/g1.gif" data-lightbox="g1">Enlarge</a>
+                          <div class="hover">
+                            <p>This is going to be a long string of te...</p>
+                            <div class="post-info">
+                              album · 54,535 Views
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img id="./img/g2.gif" class="lightboxLink" src="./img/g2.gif" alt="huehue">
+                          <a class="magnify" href="./img/g2.gif" data-lightbox="g2">Enlarge</a>
+                          <div class="hover">
+                            <p>This is going to be a long string of te...</p>
+                            <div class="post-info">
+                              album · 54,535 Views
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img id="./img/g3.gif" class="lightboxLink" src="./img/g3.gif" alt="huehue">
+                          <a class="magnify" href="./img/g3.gif" data-lightbox="g3">Enlarge</a>
+                          <div class="hover">
+                            <p>This is going to be a long string of te...</p>
+                            <div class="post-info">
+                              album · 54,535 Views
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img id="./img/g4.gif" class="lightboxLink" src="./img/g4.gif" alt="huehue">
+                          <a class="magnify" href="./img/g4.gif" data-lightbox="g4">Enlarge</a>
+                          <div class="hover">
+                            <p>This is going to be a long string of te...</p>
+                            <div class="post-info">
+                              album · 54,535 Views
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img id="./img/g5.gif" class="lightboxLink" src="./img/g5.gif" alt="huehue">
+                          <a class="magnify" href="./img/g5.gif" data-lightbox="g5">Enlarge</a>
+                          <div class="hover">
+                            <p>This is going to be a long string of te...</p>
+                            <div class="post-info">
+                              album · 54,535 Views
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                          <img id="./img/g6.gif" class="lightboxLink" src="./img/g6.gif" alt="huehue">
+                          <a class="magnify" href="./img/g6.gif" data-lightbox="g6">Enlarge</a>
+                          <div class="hover">
+                            <p>This is going to be a long string of te...</p>
+                            <div class="post-info">
+                              album · 54,535 Views
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-    /* Function to add new categories to the side-bar*/
-    function addCat(id) {
-        if (check_min(id) == true) {
-            return;
-        }
-        if (check_exist(id) == true) {
-            return;
-        }
-        else {
-            var newCat = $(".add-cat-field").val();
-            $(".sidebar-nav").append("<li id=" + newCat + "><a href='#'>" + newCat +
-            "<input type='submit' class='cat-delete' value= 'x' /></a></li>");
-        }
-    }
+                      <div style="opacity: 0; z-index: -5;" id="lightbox_background">
 
-    /* Function to control side-bar delete buttons */
-    $(document).on('click', '.cat-delete', function () {
-        $(this).closest('li').remove();
-    });
+                        <div class="lightbox_a">
+                          <img id="lightbox_picture" src="./img/1.jpg" alt="#">
+                          <div id="user_functions_container">
+                            <p style="color: white; float: left; margin: 0; font-size: large; color: #FFE181; font-style:italic;">Rating</p>
+                            <span class="starRating">
+                              <input name="rating" value="1" type="radio"><i></i>
+                              <input name="rating" value="2" type="radio"><i></i>
+                              <input name="rating" value="3" type="radio"><i></i>
+                              <input name="rating" value="4" type="radio"><i></i>
+                              <input name="rating" value="5" type="radio"><i></i>
+                            </span>
+                            <form>
+                              <p>
+                                <input id="tags_1" type="text" class="tags" value="foo,bar,baz,roffle" style="display: none;">
+                              </p>
+                            </form>
+                            <form id="comment_form">
+                              <textarea name="commentBox" placeholder="write down your comment" id="comment_box"></textarea>
+                              <input class="btn btn-danger btn-save" value="Save" type="button">
+                            </form>
+                          </div>
+                        </div>
+                      </div>
 
-    /* Function that allows for enter button on the add-category text field */ 
-    $('.add-cat-field').keyup( function (event) {
-        if( event.keyCode == 13){
-            $(".add-cat-btn").click();
-        }
-    });
+                      <div id="paging">
+                        <ul class="pagination">
+                          <li class="disabled"><a href="#">&laquo;</a></li>
+                          <li class="active"><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                          <li><a href="#">&raquo;</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer>
+                <div class="navbar navbar-default navbar-fixed-bottom" style="min-height: 20px;">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  </div>
+                  <div class="navbar-collapse collapse navbar-responsive-collapse">
+                    <ul id="info">
+                      <li><a href=http://classes.pint.com/cse134b/ role="button" class="btn btn-link">Class Page</a></li>
+                      <li>|</li>
+                      <li><a href="team-page.html" role="button" class="btn btn-link">Meet the Team</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </footer>
 
-    /* Functions to check validity of side-bar text field entries */
-    function check_length(val) {
-        maxLength = 19;
+              <script type="text/javascript">
 
-        if (val.length > maxLength) {
-            if ($("#cat-min-alert"))
-                $("#cat-min-alert").closest('li').remove();
- 
-            if ($("#cat-exist-alert"))
-                $("#cat-exist-alert").closest('li').remove();
+                $('.thumbnail > .hover').hide();
 
-            if (!$("#cat-max-alert").length) {
-                $(".sidebar-nav").prepend("<li><p id=cat-max-alert style='font-size:10; color:rgb(155,6,6);'>"
-                    + "Limit of characters is 20 </p></li>");
-            }
-        }
-    }
-    function check_min(id) {
-        var checkText = id.value;
-        if (id.value <= 0) {
+                $('.thumbnail').hover(function () {
+                  $('.hover', this).show();
+                },
+                function () {
+                  $('.hover', this).hide();
+                });
 
-            if ($("#cat-max-alert"))
-                $("#cat-max-alert").closest('li').remove();
-           
-            if ($("#cat-exist-alert"))
-                $("#cat-exist-alert").closest('li').remove();
+                /* Function to add new categories to the side-bar*/
+                function addCat(id) {
+                  if (check_min(id) == true) {
+                    return;
+                  }
+                  if (check_exist(id) == true) {
+                    return;
+                  }
+                  else {
+                    var newCat = $(".add-cat-field").val();
+                    $(".sidebar-nav").append("<li id=" + newCat + "><a href='#'>" + newCat +
+                      "<input type='submit' class='cat-delete' value= 'x' /></a></li>");
+                  }
+                }
 
-            if (!$("#cat-min-alert").length) {
-                $(".sidebar-nav").prepend("<li><p id=cat-min-alert style='font-size:10; color:rgb(155,6,6);'>"
+                /* Function to control side-bar delete buttons */
+                $(document).on('click', '.cat-delete', function () {
+                  $(this).closest('li').remove();
+                });
+
+                /* Function that allows for enter button on the add-category text field */ 
+                $('.add-cat-field').keyup( function (event) {
+                  if( event.keyCode == 13){
+                    $(".add-cat-btn").click();
+                  }
+                });
+
+                /* Functions to check validity of side-bar text field entries */
+                function check_length(val) {
+                  maxLength = 19;
+
+                  if (val.length > maxLength) {
+                    if ($("#cat-min-alert"))
+                      $("#cat-min-alert").closest('li').remove();
+
+                    if ($("#cat-exist-alert"))
+                      $("#cat-exist-alert").closest('li').remove();
+
+                    if (!$("#cat-max-alert").length) {
+                      $(".sidebar-nav").prepend("<li><p id=cat-max-alert style='font-size:10; color:rgb(155,6,6);'>"
+                        + "Limit of characters is 20 </p></li>");
+                    }
+                  }
+                }
+                function check_min(id) {
+                  var checkText = id.value;
+                  if (id.value <= 0) {
+
+                    if ($("#cat-max-alert"))
+                      $("#cat-max-alert").closest('li').remove();
+
+                    if ($("#cat-exist-alert"))
+                      $("#cat-exist-alert").closest('li').remove();
+
+                    if (!$("#cat-min-alert").length) {
+                      $(".sidebar-nav").prepend("<li><p id=cat-min-alert style='font-size:10; color:rgb(155,6,6);'>"
                         + "Minimum length is 1 </p></li>");
-            }
+                    }
 
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    /* Function checks if list element of ID already exists. Returns true if it does */
-    function check_exist(id) {
-        var idVal = id.value;
-        if ( $('#' + idVal).length) {
-            if ($("#cat-min-alert"))
-                $("#cat-min-alert").closest('li').remove();
+                    return true;
+                  }
+                  else {
+                    return false;
+                  }
+                }
+                /* Function checks if list element of ID already exists. Returns true if it does */
+                function check_exist(id) {
+                  var idVal = id.value;
+                  if ( $('#' + idVal).length) {
+                    if ($("#cat-min-alert"))
+                      $("#cat-min-alert").closest('li').remove();
 
-            if ($("#cat-max-alert"))
-                $("#cat-max-alert").closest('li').remove();
+                    if ($("#cat-max-alert"))
+                      $("#cat-max-alert").closest('li').remove();
 
-            if (!$("#cat-exist-alert").length) {
-                $(".sidebar-nav").prepend("<li><p id=cat-exist-alert style='font-size:10;" + 
-                    "color:rgb(155,6,6);'>Category already exists. </p></li>");
-            }
+                    if (!$("#cat-exist-alert").length) {
+                      $(".sidebar-nav").prepend("<li><p id=cat-exist-alert style='font-size:10;" + 
+                        "color:rgb(155,6,6);'>Category already exists. </p></li>");
+                    }
 
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-	/* Handles events when alerts are still present even after fixing the alert */
-	$("#Text1").on("keydown",function() {
-	
-		if ($("#cat-max-alert"))
-            $("#cat-max-alert").closest('li').remove();
-            
-        if ($("#cat-exist-alert"))
-            $("#cat-exist-alert").closest('li').remove();
-       
-        if ($("cat-min-alert")) 
-        	$("#cat-min-alert").closest('li').remove();	 
-           
-	});
-    
-    
+                    return true;
+                  }
+                  else{
+                    return false;
+                  }
+                }
+                /* Handles events when alerts are still present even after fixing the alert */
+                $("#Text1").on("keydown",function() {
+
+                  if ($("#cat-max-alert"))
+                    $("#cat-max-alert").closest('li').remove();
+
+                  if ($("#cat-exist-alert"))
+                    $("#cat-exist-alert").closest('li').remove();
+
+                  if ($("cat-min-alert")) 
+                    $("#cat-min-alert").closest('li').remove();	 
+
+                });
+
+
 /*
 
-    Place Firebase-specific javascript
+Place Firebase-specific javascript
 
 */
 
 var fbRef = new Firebase("https://torid-fire-9403.firebaseio.com/");
-    
+
 
 </script>
 
