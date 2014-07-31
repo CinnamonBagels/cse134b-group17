@@ -15,9 +15,9 @@
   
   "content_security_policy": "script-src 'self' https://cdn.firebase.com https://*.firebaseio.com; object-src 'self'",
 
-
   "permissions": [
     "<all_urls>",
+    "tabs",
     "contextMenus"
     ],
   "icons": {
@@ -25,7 +25,7 @@
   },
   "background": {
     "persistent": true,
-    "scripts": ["./js/extensions.js"]
+    "page": "popup.html"
     
   }
-  }
+}

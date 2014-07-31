@@ -4,9 +4,7 @@
 *
 */
 
-Firebase.enableLogging(true);
-var f = new Firebase("https://torid-fire-9403.firebaseio.com/");
-console.log(f);
+
 
 // Set up context menu tree at install time.
 chrome.runtime.onInstalled.addListener(function() {
@@ -27,13 +25,38 @@ chrome.runtime.onInstalled.addListener(function() {
 
 });
 
+Firebase.enableLogging(true);
+var f = new Firebase("https://torid-fire-9403.firebaseio.com/");
+console.log(f + "by matt");
+
+var array = [];
+
 //binds chrome onclicked
 chrome.contextMenus.onClicked.addListener(function(info) {
-    alert(info.srcUrl);
-    f.set({
-        src: srcUrl
+    var imgRef = f.child("images");
+    imgRef.push({ 
+            img: info.srcUrl
+        });
+        
+    onsole.log("successfully set");
+});
+    
+
+var imgChild = f.child("images");
+imgChild.on("child_added", function(snap){
+    var snapVal = snap.val();
+    var stringVal = JSON.stringify(snapVal);
+    //alert(JSON.stringify(snapVal));
+    var stringSplit = stringVal.split('{"img":"');
+    var finalString = stringSplit[1].split('"}'); 
+    
+    $('#content').append('<img src="' + finalString[0] + '" />');
+});
+$(document).ready(function(){
+    $("#homeBtn").click(function() {
+        var newURL = "http://google.com";
+        chrome.tabs.create({url:newURL});
+       
     });
-    console.log("successfully set");
     
 });
-
