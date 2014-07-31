@@ -18,8 +18,7 @@
   <script src="js/lightbox_a.js"></script>
   <script src="./js/jquery.tagsinput.min.js"></script>
   <script src="js/bootstrap.js"></script>
-  <script src="./js/firebase.js"></script>
-  <script src="./js/lightbox.min.js"></script>
+    <script src="./js/lightbox.min.js"></script>
   <script src="js/tag_func.js"></script>
 </head>
 
@@ -274,16 +273,10 @@
                       <div style="opacity: 0; z-index: -5;" id="lightbox_background">
 
                         <div class="lightbox_a">
+
                           <img id="lightbox_picture" src="./img/1.jpg" alt="#">
+
                           <div id="user_functions_container">
-                            <p style="color: white; float: left; margin: 0; font-size: large; color: #FFE181; font-style:italic;">Rating</p>
-                            <span class="starRating">
-                              <input name="rating" value="1" type="radio"><i></i>
-                              <input name="rating" value="2" type="radio"><i></i>
-                              <input name="rating" value="3" type="radio"><i></i>
-                              <input name="rating" value="4" type="radio"><i></i>
-                              <input name="rating" value="5" type="radio"><i></i>
-                            </span>
                             <form>
                               <p>
                                 <input id="tags_1" type="text" class="tags" value="foo,bar,baz,roffle" style="display: none;">
@@ -291,6 +284,13 @@
                             </form>
                             <form id="comment_form">
                               <textarea name="commentBox" placeholder="write down your comment" id="comment_box"></textarea>
+                              <span class="starRating">
+                                <input name="rating" value="1" type="radio"><i></i>
+                                <input name="rating" value="2" type="radio"><i></i>
+                                <input name="rating" value="3" type="radio"><i></i>
+                                <input name="rating" value="4" type="radio"><i></i>
+                                <input name="rating" value="5" type="radio"><i></i>
+                              </span>
                               <input class="btn btn-danger btn-save" value="Save" type="button">
                             </form>
                           </div>

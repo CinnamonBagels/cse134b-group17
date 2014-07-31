@@ -1,15 +1,5 @@
 $(document).ready (function()
 {
-  $(".imgFrame").each(function()
-  {
-    var url = $(this).attr("id");
-    // console.log(url);
-    $(this).css("background", "url(\"" + url + "\")");
-    $(this).css("background-repeat", "no-repeat");
-    $(this).css("background-size", "100% auto");
-    $(this).css("background-position", "center");
-  });
-
   $(".lightboxLink").click(function(e)
   {
     $("#lightbox_background").css("opacity", 1);
