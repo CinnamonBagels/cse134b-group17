@@ -59,13 +59,15 @@ footer ul li {
 .hover {
     z-index: 5;
     position:absolute;
-    top: 105px;
+    top: 161px;
+    margin-right: auto;
+    margin-left: auto;
     right: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.5); 
-    width: 100%;
-    height: 50px;
-    border: 1px solid grey;
+    background: rgba(0, 0, 0, 0.9); 
+    width: 92%;
+    height: 55px;
+    border: 4px solid grey;
     border-radius: 5px;
     cursor: default;
 }
@@ -215,9 +217,34 @@ footer ul li {
 
 .expandIcon {
     position: absolute;
-    top: .25em;
+    top: .20em;
     right: .25em;
     height: 3em !important;
+}
+
+#drop-zone {
+    height: 500px;
+    width: 500px;
+    position: fixed;
+    top: 52px;
+    left: 251px;
+    background-color: grey;
+    opacity: .9;
+    z-index: 1000;
+    border: 5px solid aqua;
+    border-radius: 5px;
+    display: none;
+}
+
+#drop-info {
+    position: absolute;
+    bottom:  0;
+    left: 25px;
+    display:  block;
+    font-family: sans-serif;
+    font-size: 2em;
+    color: black;
+    font-weight:  bold;
 }
 
 /* Responsive Design Section */
