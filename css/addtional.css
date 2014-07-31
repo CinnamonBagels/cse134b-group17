@@ -95,7 +95,7 @@ footer ul li {
     top: 50%;
     left: 36.5%;
     margin: -166px 0 0 -166px;
-    border: 10px solid #5bc0de;
+    border: 10px solid #2b2e32;
     vertical-align: middle;
     border-radius: 5px;
     box-shadow: 0 0 100px black;
@@ -164,6 +164,8 @@ footer ul li {
 
 #comment_box
 {
+    background-color: #2b2e32;
+    color: white;
     margin-bottom: 0.5em;
     width: 100%;
     border-radius: 10px;
@@ -228,10 +230,10 @@ footer ul li {
     position: fixed;
     top: 52px;
     left: 251px;
-    background-color: grey;
+    background-color: black;
     opacity: .9;
     z-index: 1000;
-    border: 5px solid aqua;
+    border: 5px solid #2b2e32;
     border-radius: 5px;
     display: none;
 }
@@ -241,6 +243,7 @@ footer ul li {
     bottom:  0;
     left: 25px;
     display:  block;
+    color:white;
     font-family: sans-serif;
     font-size: 2em;
     color: black;
