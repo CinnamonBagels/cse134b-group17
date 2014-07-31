@@ -12,6 +12,9 @@
     "default_icon": "img/gaben.png",
     "default_popup": "popup.html"
   },
+  
+  "content_security_policy": "script-src 'self' https://cdn.firebase.com https://*.firebaseio.com; object-src 'self'",
+
 
   "permissions": [
     "<all_urls>",
@@ -21,7 +24,8 @@
     
   },
   "background": {
-    "persistent": false,
+    "persistent": true,
     "scripts": ["./js/extensions.js"]
+    
   }
   }
