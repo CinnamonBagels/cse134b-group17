@@ -18,6 +18,13 @@ function hide() {
   });
 }
 
+//////////////////
+// SAVING INFO  //
+//////////////////
+function saveInfo() {
+  var name = document.getElementById
+}
+
 ///////////////////////////
 // DRAG AND DROP UPLOAD  //
 ///////////////////////////
