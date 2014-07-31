@@ -27,7 +27,9 @@ var f = new Firebase("https://torid-fire-9403.firebaseio.com/");
 chrome.contextMenus.onClicked.addListener(function(info) {
     var imgRef = f.child("images");
     imgRef.push({ 
-            img: info.srcUrl
+            img: info.srcUrl,
+            tags: "foo,bar,baz,roffle",
+            description: "Make your Description!"
         });
 });
     

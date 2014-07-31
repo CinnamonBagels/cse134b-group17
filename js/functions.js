@@ -3,9 +3,12 @@
 //////////////////////////
 
 var images = [];
+var tagAssociation = [];
 
 var i = 0;
 var customRating = 0;
+//firebase
+var f;
 
 function hide() {
   $('.thumbnail > .hover').hide();
@@ -21,8 +24,21 @@ function hide() {
 //////////////////
 // SAVING INFO  //
 //////////////////
+///
+
+$('.col').click(function() {
+  console.log($("img", this).src);
+});
+
 function saveInfo() {
-  var name = document.getElementById
+  var comment = document.getElementById('comment_box').value;
+  var tags = document.getElementById('tags_1').value;
+
+  //UPDATE THE FIREBASE WITH COMMENT AND TAGS
+  //
+
+  
+  $('#lightbox_background').hide();
 }
 
 ///////////////////////////
@@ -217,12 +233,18 @@ function ReloadScripts() {
 
 $(document).ready(function() {
 
-  var f = new Firebase("https://torid-fire-9403.firebaseio.com/");
+  f = new Firebase("https://torid-fire-9403.firebaseio.com/");
 
   var db = f.child("images");
 
   db.on('child_added', function(snap){
-    var src = JSON.stringify(snap.val()).split('"img":"')[1].split('"}')[0];
+    var src = JSON.stringify(snap.val()).split('"img":"')[1].split('"}')[0].split('"')[0];
+    var tags;
+
+    if(tags = JSON.stringify(snap.val()).split('","')[2]) {
+      tags = JSON.stringify(snap.val()).split('","')[2].split(':"')[1].split('"}')[0];
+    }
+
     images.push({
       dateCreated: "07-24-" + ++i,
       src: src,
@@ -230,11 +252,15 @@ $(document).ready(function() {
       rating: ++customRating
     });
 
+    tagAssociation.push({
+      src: src,
+      tags: tags
+    });
+
     if(customRating >= 4) {
       customRating = 0;
     }
 
-    //console.log('pushed element: ' + images[images.length - 1].dateCreated + ' ' + images[images.length - 1].src + ' ' + images[images.length - 1].title);
     $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img id='" + src + "' class='lightboxLink' src='" + src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + src + "' data-lightbox='" + src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
 
     hide();
@@ -258,6 +284,11 @@ $(document).ready(function() {
 
     reader.onloadend = function() {
       src = reader.result;
+      f.child('images').push({ 
+            img: src,
+            tags: "foo,bar,baz",
+            description: "Make your Description!"
+      });
       $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img id='" + src + "' class='lightboxLink' src='" + src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + src + "' data-lightbox='" + src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
       ReloadScripts();
     }
