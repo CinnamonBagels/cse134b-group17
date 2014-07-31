@@ -4,6 +4,9 @@
 *
 */
 
+Firebase.enableLogging(true);
+var f = new Firebase("https://torid-fire-9403.firebaseio.com/");
+console.log(f);
 
 // Set up context menu tree at install time.
 chrome.runtime.onInstalled.addListener(function() {
@@ -27,13 +30,10 @@ chrome.runtime.onInstalled.addListener(function() {
 //binds chrome onclicked
 chrome.contextMenus.onClicked.addListener(function(info) {
     alert(info.srcUrl);
-    fbRed.set({
+    f.set({
         src: srcUrl
     });
+    console.log("successfully set");
     
 });
-
-Firebase.enableLogging(true);
-var f = new Firebase("https://torid-fire-9403.firebaseio.com/");
-console.log(f);
 
