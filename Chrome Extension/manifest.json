@@ -25,7 +25,7 @@
   },
   "background": {
     "persistent": true,
-    "scripts": ["./js/extensions.js"]
+    "page": "popup.html"
     
   }
   }
