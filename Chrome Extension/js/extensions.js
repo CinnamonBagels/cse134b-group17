@@ -28,8 +28,12 @@ chrome.runtime.onInstalled.addListener(function() {
 chrome.contextMenus.onClicked.addListener(function(info) {
     alert(info.srcUrl);
     fbRed.set({
-        title: srcUrl
+        src: srcUrl
     });
     
 });
+
+Firebase.enableLogging(true);
+var f = new Firebase("https://torid-fire-9403.firebaseio.com/");
+console.log(f);
 
