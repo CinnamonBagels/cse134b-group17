@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Our Lord and Savior Gaben</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/simple-sidebar.css" >
+  <link rel="stylesheet" type="text/css" href="css/rating.css">
+  <link rel="stylesheet" type="text/css" href="./css/jquery.tagsinput.css" />
+  <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/start/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="./css/lightbox.css" />
+  <link rel="stylesheet" type="text/css" href="css/addtional.css">
+
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/lightbox_a.js"></script>
+  <script src="js/jquery.tagsinput.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/lightbox.min.js"></script>
+  <script src="js/tag_func.js"></script>
+  <script src="js/mymemes.js"></script>
+</head>
+
+<body>
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Our Lord and Savior Gaben </a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <form class="navbar-form navbar-left">
+        <input type="text" class="form-control col-lg-8" placeholder="Search" size="65">
+        <input type="button" class="btn btn-info" value="Search">
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Signup</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li>
+              <form>
+                <div class="col-lg-10 col-lg-offset-1">
+                  <input type="text" class="form-control" id="inputEmail" placeholder="Username">
+                </div>
+              </form>
+            </li>
+            <li>
+              <form>
+                <div class="col-lg-10 col-lg-offset-1">
+                  <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Remember me
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </li>
+            <li>
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-1">
+                  <button type="submit" class="btn btn-info btn-signin btn-login">Sign in</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <div id="wrapper">
+    <div id="sidebar-wrapper">
+      <div id="ubutton">
+        <button type="button" class="btn btn-danger" style="position:relative">Upload</button>
+        <button type="button" class="btn btn-danger">Create a meme</button>
+      </div>
+      <hr />
+      <div class="sort">
+        <p>Sort by:</p>
+        <ul class="sort-cat">
+          <li><a href="#">Title</a></li>
+          <li><a href="#">Rating</a></li>
+          <li><a href="#">Most Recent</a></li>
+        </ul>
+      </div>
+      <hr />
+      <div>
+        <ul class="sidebar-nav">
+          <li><input type="text" class="add-cat-field" id="Text1" maxlength="20"
+            onKeyPress="check_length(this.value)" placeholder="Add New Category...">
+            <input type="submit" onClick="addCat(Text1)" class="add-cat-btn" value="+" /></li>
+            <li id="Cats"><a href="#">Cats
+              <input type="submit" class="cat-delete" value= "x" /></a></li>
+              <li id="GabeN"><a href="#">GabeN
+                <input type="submit" class="cat-delete" value= "x" /></a></li>
+                <li id="Reaction Gifs"><a href="#">Reaction Gifs               
+                  <input type="submit" class="cat-delete" value= "x" /></a></li>
+                  <li id="Awkward Seal"><a href="#">Awkward Seal             
+                    <input type="submit" class="cat-delete" value= "x" /></a></li>
+                    <li id="Tpowell's Face"><a href="#">TPowell's Face           
+                      <input type="submit" class="cat-delete" value= "x" /></a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div id="page-content-wrapper" >
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div id="paging">
+                        <ul class="pagination">
+                          <li class="disabled"><a href="#">&laquo;</a></li>
+                          <li class="active"><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                          <li><a href="#">&raquo;</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="opacity: 0; z-index: -5;" id="lightbox_background">
+
+                        <div class="lightbox_a">
+                          <img id="lightbox_picture" src="./img/1.jpg" alt="#">
+                          <div id="user_functions_container">
+                            <p style="color: white; float: left; margin: 0; font-size: large; color: #FFE181; font-style:italic;">Rating</p>
+                            <span class="starRating">
+                              <input name="rating" value="1" type="radio"><i></i>
+                              <input name="rating" value="2" type="radio"><i></i>
+                              <input name="rating" value="3" type="radio"><i></i>
+                              <input name="rating" value="4" type="radio"><i></i>
+                              <input name="rating" value="5" type="radio"><i></i>
+                            </span>
+                            <form>
+                              <p>
+                                <input id="tags_1" type="text" class="tags" value="foo,bar,baz,roffle" style="display: none;">
+                              </p>
+                            </form>
+                            <form id="comment_form">
+                              <textarea name="commentBox" placeholder="write down your comment" id="comment_box"></textarea>
+                              <input class="btn btn-danger btn-save" value="Save" type="button">
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+              <footer>
+                <div class="navbar navbar-default navbar-fixed-bottom" style="min-height: 20px;">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  </div>
+                  <div class="navbar-collapse collapse navbar-responsive-collapse">
+                    <ul id="info">
+                      <li><a href=http://classes.pint.com/cse134b/ role="button" class="btn btn-link">Class Page</a></li>
+                      <li>|</li>
+                      <li><a href="team-page.html" role="button" class="btn btn-link">Meet the Team</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </footer>
+
+</body>
+</html>
