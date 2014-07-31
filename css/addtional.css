@@ -13,8 +13,10 @@
 }
 
 .btn-save{
-    width: 100%;
+    width: 40%;
     border-radius: 10px;
+    margin-left: 10px;
+    float: right;
 }
 
 .images {
@@ -65,6 +67,7 @@ footer ul li {
     height: 50px;
     border: 1px solid grey;
     border-radius: 5px;
+    cursor: default;
 }
 
 .imgFrame
