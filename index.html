@@ -38,7 +38,6 @@
         <input type="button" class="btn btn-info" value="Search">
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Signup</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
           <ul class="dropdown-menu">
@@ -64,9 +63,17 @@
             <li>
               <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-1">
-                  <button type="submit" class="btn btn-info btn-signin btn-login">Sign in</button>
+                  <button type="submit" class="btn btn-info btn-signin btn-login">Login in</button>
                 </div>
               </div>
+            </li>
+            <li style="text-align: center;">
+                <button type="button" class="btn btn-link">
+                    <font color = #939393>Sign Up</font>
+                </button>
+                <button type="button" class="btn btn-link">
+                    <font color = #939393>Reset Password</font>
+                </button>
             </li>
           </ul>
         </li>
@@ -204,13 +211,13 @@
                       </div>
                       <div class="col-sm-6 col-md-3">
                         <div class="thumbnail">
-                          <img id="./img/g2.gif" class="lightboxLink" src="./img/g2.gif" alt="huehue">
+                          <img id="./img/22.jpg" class="lightboxLink" src="./img/22.jpg" alt="huehue">
                           <div class="hover">
                             <p>This is going to be a long string of te...</p>
                             <div class="post-info">
                               album · 54,535 Views
                             </div>
-                           <a class="magnify" href="./img/g2.gif" data-lightbox="g2"><img class="expandIcon" src=./img/expand.png /></a>
+                           <a class="magnify" href="./img/22.jpg" data-lightbox="22"><img class="expandIcon" src=./img/expand.png /></a>
                           </div>
                         </div>
                       </div>
@@ -266,16 +273,10 @@
                       <div style="opacity: 0; z-index: -5;" id="lightbox_background">
 
                         <div class="lightbox_a">
+
                           <img id="lightbox_picture" src="./img/1.jpg" alt="#">
+
                           <div id="user_functions_container">
-                            <p style="color: white; float: left; margin: 0; font-size: large; color: #FFE181; font-style:italic;">Rating</p>
-                            <span class="starRating">
-                              <input name="rating" value="1" type="radio"><i></i>
-                              <input name="rating" value="2" type="radio"><i></i>
-                              <input name="rating" value="3" type="radio"><i></i>
-                              <input name="rating" value="4" type="radio"><i></i>
-                              <input name="rating" value="5" type="radio"><i></i>
-                            </span>
                             <form>
                               <p>
                                 <input id="tags_1" type="text" class="tags" value="foo,bar,baz,roffle" style="display: none;">
@@ -283,22 +284,17 @@
                             </form>
                             <form id="comment_form">
                               <textarea name="commentBox" placeholder="write down your comment" id="comment_box"></textarea>
+                              <span class="starRating">
+                                <input name="rating" value="1" type="radio"><i></i>
+                                <input name="rating" value="2" type="radio"><i></i>
+                                <input name="rating" value="3" type="radio"><i></i>
+                                <input name="rating" value="4" type="radio"><i></i>
+                                <input name="rating" value="5" type="radio"><i></i>
+                              </span>
                               <input class="btn btn-danger btn-save" value="Save" type="button">
                             </form>
                           </div>
                         </div>
-                      </div>
-
-                      <div id="paging">
-                        <ul class="pagination">
-                          <li class="disabled"><a href="#">&laquo;</a></li>
-                          <li class="active"><a href="#">1</a></li>
-                          <li><a href="#">2</a></li>
-                          <li><a href="#">3</a></li>
-                          <li><a href="#">4</a></li>
-                          <li><a href="#">5</a></li>
-                          <li><a href="#">&raquo;</a></li>
-                        </ul>
                       </div>
                     </div>
                   </div>
