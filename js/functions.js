@@ -202,7 +202,7 @@ function sortByDate() {
     $('.col-sm-6').remove();
 
     images.sort(function(a, b) {
-      return a.dateCreated > b.dateCreated;
+      return a.dateCreated < b.dateCreated;
     });
     for(var k = 0; k < images.length; k++) {
       $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img id='" + images[k].src + "' class='lightboxLink' src='" + images[k].src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + images[k].src + "' data-lightbox='" + images[k].src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
@@ -289,7 +289,7 @@ $(document).ready(function() {
             tags: "foo,bar,baz",
             description: "Make your Description!"
       });
-      $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img id='" + src + "' class='lightboxLink' src='" + src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + src + "' data-lightbox='" + src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
+      //$('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img id='" + src + "' class='lightboxLink' src='" + src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + src + "' data-lightbox='" + src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
       ReloadScripts();
     }
     reader.readAsDataURL(file);
