@@ -3,7 +3,7 @@
 //////////////////////////
 
 var images = [];
-var tagAssociation = [];
+var srcAssociation = [];
 
 var i = 0;
 var customRating = 0;
@@ -32,13 +32,31 @@ $('.col').click(function() {
 
 function saveInfo() {
   var comment = document.getElementById('comment_box').value;
-  var tags = document.getElementById('tags_1').value;
+  var imgTags = document.getElementById('tags_1').value;
+
+  var imgRating = parseInt($("input:radio[name=rating]:checked").val());
+  
 
   //UPDATE THE FIREBASE WITH COMMENT AND TAGS
   //
-
+  
+  refImages = new Firebase("https://torid-fire-9403.firebaseio.com/images");
+  
+  var lbSrc = $("#lightbox_picture").attr("src");
+  var indexOfSrc = jQuery.inArray(lbSrc, srcAssociation);
+  var grabUID = images[indexOfSrc].uid;
+  
+  var setChildWithUID = refImages.child(grabUID);
+  setChildWithUID.update({
+      description: comment,
+      tags: imgTags,
+      rating: imgRating,
+  });
   
   $('#lightbox_background').hide();
+  
+  document.getElementById('tags_1').attr(value, imgTag);
+  
 }
 
 ///////////////////////////
@@ -188,7 +206,7 @@ function sortByRating() {
     $('.col-sm-6').remove();
 
     images.sort(function(a, b) {
-      return a.rating > b.rating;
+      return a.rating - b.rating;
     });
 
     for(var k = 0; k < images.length; k++) {
@@ -202,7 +220,7 @@ function sortByDate() {
     $('.col-sm-6').remove();
 
     images.sort(function(a, b) {
-      return a.dateCreated < b.dateCreated;
+      return a.dateCreated - b.dateCreated;
     });
     for(var k = 0; k < images.length; k++) {
       $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img id='" + images[k].src + "' class='lightboxLink' src='" + images[k].src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + images[k].src + "' data-lightbox='" + images[k].src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
@@ -244,18 +262,25 @@ $(document).ready(function() {
     if(tags = JSON.stringify(snap.val()).split('","')[2]) {
       tags = JSON.stringify(snap.val()).split('","')[2].split(':"')[1].split('"}')[0];
     }
-
+    
+    console.log(JSON.stringify(snap.val()));
+    
+    var timeDate = JSON.stringify(snap.val()).split('"time":')[1].split(',"')[0];
+    console.log(timeDate);
+    var imgTitle = JSON.stringify(snap.val()).split('"title":"')[1].split('"')[0];
+    var imgRating = parseInt(JSON.stringify(snap.val()).split('"rating":')[1].split(',')[0]);
+    var imgDes = JSON.stringify(snap.val()).split('"description":"')[1].split('",')[0];
+    console.log(imgDes);
     images.push({
-      dateCreated: "07-24-" + ++i,
+      uid: snap.name(),
+      dateCreated: timeDate,
       src: src,
-      title: ++i,
-      rating: ++customRating
+      title: imgTitle,
+      rating: imgRating,
+      description: imgDes
     });
 
-    tagAssociation.push({
-      src: src,
-      tags: tags
-    });
+    srcAssociation.push(src);
 
     if(customRating >= 4) {
       customRating = 0;
@@ -286,8 +311,7 @@ $(document).ready(function() {
       src = reader.result;
       f.child('images').push({ 
             img: src,
-            tags: "foo,bar,baz",
-            description: "Make your Description!"
+            tags: "foo,bar,baz"
       });
       //$('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img id='" + src + "' class='lightboxLink' src='" + src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + src + "' data-lightbox='" + src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
       ReloadScripts();

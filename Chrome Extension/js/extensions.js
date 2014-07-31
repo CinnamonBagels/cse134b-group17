@@ -26,10 +26,17 @@ var f = new Firebase("https://torid-fire-9403.firebaseio.com/");
 //binds chrome onclicked
 chrome.contextMenus.onClicked.addListener(function(info) {
     var imgRef = f.child("images");
+    var date=new Date();
+    var timeStamp = Math.round(date.getTime()/1000);
     imgRef.push({ 
             img: info.srcUrl,
+            time: timeStamp,
+            title: "",
             tags: "foo,bar,baz,roffle",
+            rating: 0,
+            category: "none",
             description: "Make your Description!"
+            
         });
 });
     
@@ -38,9 +45,8 @@ var imgChild = f.child("images");
 imgChild.on("child_added", function(snap){
     var snapVal = snap.val();
     var stringVal = JSON.stringify(snapVal);
-    //alert(JSON.stringify(snapVal));
-    var stringSplit = stringVal.split('{"img":"');
+    var stringSplit = stringVal.split('"img":"');
     var finalString = stringSplit[1].split('"}'); 
-    
+    console.log(snap.name());
     $('#content').append('<img src="' + finalString[0] + '" />');
 });
