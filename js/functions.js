@@ -34,10 +34,16 @@ function saveInfo(element) {
             break;
         }
     }
-    console.log(image);
+    var tags = image.tags.split(',');
+    console.log(tags);
 
     $('#tags_1').replaceWith('<input id="tags_1" type="text" class="tags" value="' + image.tags + '" style="display: none;">');
-    ReloadTags();
+    $('.tag').remove();
+    for (var i = tags.length - 1; i >=0; i--) {
+        $('#tags_1_tagsinput').prepend('<span class="tag"><span>' + tags[i] + '&nbsp;&nbsp;</span><a href="#" title="Removing tag">x</a></span>')
+    }
+
+    document.getElementsByTagName('textarea')[0].placeholder = image.description;
 
 }
 
