@@ -34,28 +34,17 @@ function saveInfo() {
   var comment = document.getElementById('comment_box').value;
   var imgTags = document.getElementById('tags_1').value;
 
-  var imgRating = parseInt($("input:radio[name=rating]:checked").val());
+  //var imgRating = parseInt($("input:radio[name=rating]:checked").val());
   
 
   //UPDATE THE FIREBASE WITH COMMENT AND TAGS
   //
   
-  refImages = new Firebase("https://torid-fire-9403.firebaseio.com/images");
-  
-  var lbSrc = $("#lightbox_picture").attr("src");
-  var indexOfSrc = jQuery.inArray(lbSrc, srcAssociation);
-  var grabUID = images[indexOfSrc].uid;
-  
-  var setChildWithUID = refImages.child(grabUID);
-  setChildWithUID.update({
-      description: comment,
-      tags: imgTags,
-      rating: imgRating,
-  });
+  refImages = new Firebase("https://flickering-fire-2908.firebaseio.com/");
   
   $('#lightbox_background').hide();
   
-  document.getElementById('tags_1').attr(value, imgTag);
+  //document.getElementById('tags_1').attr(value, imgTag);
   
 }
 
@@ -206,7 +195,7 @@ function sortByRating() {
     $('.col-sm-6').remove();
 
     images.sort(function(a, b) {
-      return a.rating - b.rating;
+      return a.rating > b.rating;
     });
 
     for(var k = 0; k < images.length; k++) {
@@ -251,7 +240,7 @@ function ReloadScripts() {
 
 $(document).ready(function() {
 
-  f = new Firebase("https://torid-fire-9403.firebaseio.com/");
+    f = new Firebase("https://flickering-fire-2908.firebaseio.com/");
 
   var db = f.child("images");
 
@@ -259,28 +248,9 @@ $(document).ready(function() {
     var src = JSON.stringify(snap.val()).split('"img":"')[1].split('"}')[0].split('"')[0];
     var tags;
 
-    if(tags = JSON.stringify(snap.val()).split('","')[2]) {
-      tags = JSON.stringify(snap.val()).split('","')[2].split(':"')[1].split('"}')[0];
-    }
-    
-    console.log(JSON.stringify(snap.val()));
-    
-    var timeDate = JSON.stringify(snap.val()).split('"time":')[1].split(',"')[0];
-    console.log(timeDate);
-    var imgTitle = JSON.stringify(snap.val()).split('"title":"')[1].split('"')[0];
-    var imgRating = parseInt(JSON.stringify(snap.val()).split('"rating":')[1].split(',')[0]);
-    var imgDes = JSON.stringify(snap.val()).split('"description":"')[1].split('",')[0];
-    console.log(imgDes);
-    images.push({
-      uid: snap.name(),
-      dateCreated: timeDate,
-      src: src,
-      title: imgTitle,
-      rating: imgRating,
-      description: imgDes
-    });
-
-    srcAssociation.push(src);
+    //if(tags = JSON.stringify(snap.val()).split('","')[2]) {
+      //tags = JSON.stringify(snap.val()).split('","')[2].split(':"')[1].split('"}')[0];
+    //}
 
     if(customRating >= 4) {
       customRating = 0;
@@ -302,8 +272,10 @@ $(document).ready(function() {
   $('#drop-zone').on('drop', function(e) {
     e.originalEvent.stopPropagation();
     e.originalEvent.preventDefault();
-
-    var file = e.originalEvent.dataTransfer.files[0];
+    var fileQueue = [];
+    for (var i = 0; i < e.originalEvent.dataTransfer.files.length; i++) {
+        fileQueue.push(e.originalEvent.dataTransfer.files[i]);
+    }
     var reader = new FileReader();
     var src;
 
@@ -311,12 +283,16 @@ $(document).ready(function() {
       src = reader.result;
       f.child('images').push({ 
             img: src,
-            tags: "foo,bar,baz"
+            tags: "foo,bar,baz",
+            rating: 5,
+            timeStamp: Math.round(new Date().getTime()/1000)
       });
-      //$('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img id='" + src + "' class='lightboxLink' src='" + src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + src + "' data-lightbox='" + src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
       ReloadScripts();
+      if (fileQueue[0]) {
+          reader.readAsDataURL(fileQueue.shift());
+      }
     }
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(fileQueue.shift());
  });
 
   function doNothing(e) {

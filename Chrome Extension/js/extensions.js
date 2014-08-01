@@ -21,7 +21,7 @@ chrome.runtime.onInstalled.addListener(function() {
   }
 });
 
-var f = new Firebase("https://torid-fire-9403.firebaseio.com/");
+var f = new Firebase("https://flickering-fire-2908.firebaseio.com/");
 
 //binds chrome onclicked
 chrome.contextMenus.onClicked.addListener(function(info) {
