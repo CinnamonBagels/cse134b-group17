@@ -26,26 +26,33 @@ function hide() {
 //////////////////
 ///
 
-$('.col').click(function() {
-  console.log($("img", this).src);
-});
+function saveInfo(element) {
+    var image;
+    for (var i = 0; i < images.length; i++) {
+        if (images[i].img == element.src) {
+            image = images[i];
+            break;
+        }
+    }
+    console.log(image);
 
-function saveInfo() {
-  var comment = document.getElementById('comment_box').value;
-  var imgTags = document.getElementById('tags_1').value;
+    $('#tags_1').replaceWith('<input id="tags_1" type="text" class="tags" value="' + image.tags + '" style="display: none;">');
+    ReloadTags();
 
-  //var imgRating = parseInt($("input:radio[name=rating]:checked").val());
-  
+}
 
-  //UPDATE THE FIREBASE WITH COMMENT AND TAGS
-  //
-  
-  refImages = new Firebase("https://flickering-fire-2908.firebaseio.com/");
-  
-  $('#lightbox_background').hide();
-  
-  //document.getElementById('tags_1').attr(value, imgTag);
-  
+function ReloadTags() {
+    var scriptTag = document.getElementById("pleasework");
+    var src;
+
+    src = scriptTag.src;
+    scriptTag.parentNode.removeChild(scriptTag);
+
+    var x = document.createElement('script');
+    x.type = 'text/javascript';
+    x.src = "./js/jquery.tagsinput.min.js";
+    x.id = "pleasework";
+    document.getElementsByTagName('head')[0].appendChild(x);
 }
 
 ///////////////////////////
@@ -185,7 +192,7 @@ function sortByTitle() {
       return a.title > b.title;
     });
     for(var k = 0; k < images.length; k++) {
-        $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img id='" + images[k].src + "' class='lightboxLink' src='" + images[k].src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + images[k].src + "' data-lightbox='" + images[k].src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
+        $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img  id='" + images[k].src + "' class='lightboxLink' src='" + images[k].src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + images[k].src + "' data-lightbox='" + images[k].src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
     }
     hide();
     ReloadScripts();
@@ -199,7 +206,7 @@ function sortByRating() {
     });
 
     for(var k = 0; k < images.length; k++) {
-       $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img id='" + images[k].src + "' class='lightboxLink' src='" + images[k].src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + images[k].src + "' data-lightbox='" + images[k].src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
+       $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img onclick='saveInfo(this)' id='" + images[k].src + "' class='lightboxLink' src='" + images[k].src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + images[k].src + "' data-lightbox='" + images[k].src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
     }
     hide();
     ReloadScripts();
@@ -212,7 +219,7 @@ function sortByDate() {
       return a.dateCreated - b.dateCreated;
     });
     for(var k = 0; k < images.length; k++) {
-      $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img id='" + images[k].src + "' class='lightboxLink' src='" + images[k].src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + images[k].src + "' data-lightbox='" + images[k].src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
+      $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img onclick='saveInfo(this)' id='" + images[k].src + "' class='lightboxLink' src='" + images[k].src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + images[k].src + "' data-lightbox='" + images[k].src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
    }
    hide();
    ReloadScripts();
@@ -223,8 +230,8 @@ function sortByDate() {
 /////////////////////////
 function ReloadScripts() {
 
-  var scriptTag = document.getElementById("superImportant");
-  var src;
+    var scriptTag = document.getElementById("superImportant");
+    var src;
 
     src = scriptTag.src;
     scriptTag.parentNode.removeChild(scriptTag);
@@ -235,10 +242,13 @@ function ReloadScripts() {
     x.id = "superImportant";
     document.getElementsByTagName('head')[0].appendChild(x);
 
-
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
+
+    $('.lightboxLink').on('click', function () {
+        console.log('here');
+    });
 
     f = new Firebase("https://flickering-fire-2908.firebaseio.com/");
 
@@ -247,7 +257,7 @@ $(document).ready(function() {
   db.on('child_added', function(snap){
     var src = JSON.stringify(snap.val()).split('"img":"')[1].split('"}')[0].split('"')[0];
     var tags;
-
+    var image = snap.val();
     //if(tags = JSON.stringify(snap.val()).split('","')[2]) {
       //tags = JSON.stringify(snap.val()).split('","')[2].split(':"')[1].split('"}')[0];
     //}
@@ -255,8 +265,18 @@ $(document).ready(function() {
     if(customRating >= 4) {
       customRating = 0;
     }
+    
+    var category = image.category;
+    var description = image.description;
+    var img = image.img;
+    var rating = image.rating;
+    var time = image.time;
+    var title = image.title;
 
-    $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img id='" + src + "' class='lightboxLink' src='" + src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + src + "' data-lightbox='" + src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
+    images.push(image);
+    console.log(images);
+
+    $('.row').prepend("<div class='col-sm-6 col-md-3'><div  class='thumbnail'><img onclick='saveInfo(this)' id='" + src + "' class='lightboxLink' src='" + src + "' alt='huehue'><div class='hover'><p>" + description + "</p><div class='post-info'>Category : " + category + "</div><a class='magnify' href='" + src + "' data-lightbox='" + src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
 
     hide();
 
@@ -278,14 +298,22 @@ $(document).ready(function() {
     }
     var reader = new FileReader();
     var src;
-
+    var timeStamp = Math.round(new Date().getTime()/1000);
     reader.onloadend = function() {
       src = reader.result;
       f.child('images').push({ 
             img: src,
             tags: "foo,bar,baz",
             rating: 5,
-            timeStamp: Math.round(new Date().getTime()/1000)
+            timeStamp: timeStamp
+      });
+
+      images.push({
+          img: src,
+          tags: "foo,bar,baz",
+          rating: 5,
+          timeStamp: timeStamp
+
       });
       ReloadScripts();
       if (fileQueue[0]) {
@@ -296,7 +324,6 @@ $(document).ready(function() {
  });
 
   function doNothing(e) {
-    console.log('did nothing');
     e.originalEvent.stopPropagation();
     e.originalEvent.preventDefault();
   }
