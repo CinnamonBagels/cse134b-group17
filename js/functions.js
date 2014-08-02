@@ -10,6 +10,14 @@ var customRating = 0;
 //firebase
 var f;
 
+var categories = ["cat", "gaben", "Reaction Gifs"];
+var tags = ["turn,down,for,what", "thomas,powell,is,awesome", "this,is,a,random,seeded,category", "max,wang"];
+var ratings = [1, 2, 3, 4, 5];
+var descriptions = ["Hehe", "TURN DOWN FOR WHAT!?", "Shakira is huehue", "pls give us points", "be easy on us when grading", "this is a random description",
+ "we are seeding our descriptions"];
+
+var titles = ["this", "is", "a", "title", "that", "we", "dont", "care", "about"];
+
 function hide() {
   $('.thumbnail > .hover').hide();
 
@@ -198,7 +206,7 @@ function sortByTitle() {
       return a.title > b.title;
     });
     for(var k = 0; k < images.length; k++) {
-        $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img  id='" + images[k].src + "' class='lightboxLink' src='" + images[k].src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + images[k].src + "' data-lightbox='" + images[k].src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
+        $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img  id='" + images[k].img + "' class='lightboxLink' src='" + images[k].img + "' alt='huehue'><div class='hover'><p>" + images[k].description + "</p><div class='post-info'>Category : " + images[k].category + "</div><a class='magnify' href='" + images[k].img + "' data-lightbox='" + images[k].img + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
     }
     hide();
     ReloadScripts();
@@ -212,7 +220,7 @@ function sortByRating() {
     });
 
     for(var k = 0; k < images.length; k++) {
-       $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img onclick='saveInfo(this)' id='" + images[k].src + "' class='lightboxLink' src='" + images[k].src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + images[k].src + "' data-lightbox='" + images[k].src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
+        $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img onclick='saveInfo(this)' id='" + images[k].img + "' class='lightboxLink' src='" + images[k].img + "' alt='huehue'><div class='hover'><p>" + images[k].description + "</p><div class='post-info'>Category: " + images[k].category + "</div><a class='magnify' href='" + images[k].img + "' data-lightbox='" + images[k].img + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
     }
     hide();
     ReloadScripts();
@@ -222,10 +230,10 @@ function sortByDate() {
     $('.col-sm-6').remove();
 
     images.sort(function(a, b) {
-      return a.dateCreated - b.dateCreated;
+      return a.time > b.time;
     });
     for(var k = 0; k < images.length; k++) {
-      $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img onclick='saveInfo(this)' id='" + images[k].src + "' class='lightboxLink' src='" + images[k].src + "' alt='huehue'><div class='hover'><p>Add your own Comment!</p><div class='post-info'>Album : My Memes</div><a class='magnify' href='" + images[k].src + "' data-lightbox='" + images[k].src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
+        $('.row').prepend("<div class='col-sm-6 col-md-3'><div class='thumbnail'><img onclick='saveInfo(this)' id='" + images[k].img + "' class='lightboxLink' src='" + images[k].img + "' alt='huehue'><div class='hover'><p>" + images[k].description + "</p><div class='post-info'>Category: " + images[k].category + "</div><a class='magnify' href='" + images[k].img + "' data-lightbox='" + images[k].img + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
    }
    hide();
    ReloadScripts();
@@ -264,13 +272,6 @@ $(document).ready(function () {
     var src = JSON.stringify(snap.val()).split('"img":"')[1].split('"}')[0].split('"')[0];
     var tags;
     var image = snap.val();
-    //if(tags = JSON.stringify(snap.val()).split('","')[2]) {
-      //tags = JSON.stringify(snap.val()).split('","')[2].split(':"')[1].split('"}')[0];
-    //}
-
-    if(customRating >= 4) {
-      customRating = 0;
-    }
     
     var category = image.category;
     var description = image.description;
@@ -282,7 +283,7 @@ $(document).ready(function () {
     images.push(image);
     console.log(images);
 
-    $('.row').prepend("<div class='col-sm-6 col-md-3'><div  class='thumbnail'><img onclick='saveInfo(this)' id='" + src + "' class='lightboxLink' src='" + src + "' alt='huehue'><div class='hover'><p>" + description + "</p><div class='post-info'>Category : " + category + "</div><a class='magnify' href='" + src + "' data-lightbox='" + src + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
+    $('.row').prepend("<div class='col-sm-6 col-md-3'><div  class='thumbnail'><img onclick='saveInfo(this)' id='" + img + "' class='lightboxLink' src='" + img + "' alt='huehue'><div class='hover'><p>" + description + "</p><div class='post-info'>Category : " + category + "</div><a class='magnify' href='" + img + "' data-lightbox='" + img + "'><img class='expandIcon' src=./img/expand.png /></a></div></div></div>");
 
     hide();
 
@@ -308,17 +309,23 @@ $(document).ready(function () {
     reader.onloadend = function() {
       src = reader.result;
       f.child('images').push({ 
-            img: src,
-            tags: "foo,bar,baz",
-            rating: 5,
-            timeStamp: timeStamp
+          img: src,
+          time: timeStamp,
+          title: titles[Math.floor(Math.random() * titles.length)],
+          tags: tags[Math.floor(Math.random() * tags.length)],
+          rating: ratings[Math.floor(Math.random() * ratings.length)],
+          category: categories[Math.floor(Math.random() * categories.length)],
+          description: descriptions[Math.floor(Math.random() * descriptions.length)]
       });
 
       images.push({
           img: src,
-          tags: "foo,bar,baz",
-          rating: 5,
-          timeStamp: timeStamp
+          time: timeStamp,
+          title: titles[Math.floor(Math.random() * titles.length)],
+          tags: tags[Math.floor(Math.random() * tags.length)],
+          rating: ratings[Math.floor(Math.random() * ratings.length)],
+          category: categories[Math.floor(Math.random() * categories.length)],
+          description: descriptions[Math.floor(Math.random() * descriptions.length)]
 
       });
       ReloadScripts();
@@ -327,6 +334,7 @@ $(document).ready(function () {
       }
     }
     reader.readAsDataURL(fileQueue.shift());
+    hideDropZone();
  });
 
   function doNothing(e) {

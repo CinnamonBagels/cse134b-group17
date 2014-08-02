@@ -44,7 +44,8 @@ chrome.contextMenus.onClicked.addListener(function(info) {
             category: categories[Math.floor(Math.random() * categories.length)],
             description: descriptions[Math.floor(Math.random() * descriptions.length)]
             
-        });
+    });
+    window.alert('Meme successfully added to your mememaster!');
 });
     
 
